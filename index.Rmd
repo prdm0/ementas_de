@@ -1,12 +1,16 @@
 ---
-title: CONSULTA DAS EMENTAS
+title: EMENTAS - DE
 output: 
   flexdashboard::flex_dashboard:
-    theme:
-      bootswatch: flatly
-      version: 5
     orientation: columns
     vertical_layout: fill
+    theme:
+      primary: "#323AD9"
+      secondary: "#BA2626"
+      enable-gradients: TRUE
+      enable-shadows: TRUE
+      bootswatch: journal
+      version: 5
     favicon: "img/logo.png"
     css: "style.css"
 ---
@@ -21,10 +25,8 @@ library(readr)
 source("R/codigo_tabela.R")
 ```
 
-Column {data-width=250 .tabset}
------------------------------------------------------------------------
-
-### SOBRE
+Sobre {data-icon="fa-home"}
+=====================================
 
 O Curso de Bacharelado em Estatística, do [Departamento de Estatística](https://www.ufpb.br/de) - DE da [Universidade Federal da Paraíba](https://www.ufpb.br) - UFPB foi criado no ano 2000, a partir da Resolução Nº 25/2000 do CONSEPE (Conselho Superior de Ensino, Pesquisa e Extensão). Desde a primeira turma de formandos em 2004.1, todos os bacharéis em Estatística da UFPB obtiveram postos de trabalho e/ou ingressaram em programas de pós-graduação de comprovado nível de excelência.
 
@@ -42,26 +44,33 @@ Nessa aplicação, você poderá ter acesso às lista de conteúdos das ementas 
 
 3 - Para ter acesso às disciplinas de serviço, por favor, entre em contato com a Secretaria do DE.
 
+
+Ementas de serviço {data-navmenu="Ementas" data-icon="fa-book-open"}
+=====================================================================
+
+### DISCIPLINAS DE SERVIÇO {.no-mobile}
+<br>
+```{r}
+tabela(disciplinas_servico)
+```
+
 ### DISCIPLINAS DE SERVIÇO {.mobile}
-
-
-<br>
 <br>
 ```{r}
 tabela(disciplinas_servico)
 ```
 
-### DISCIPLINAS DE SERVIÇO {.nomobile}
+Ementas do bacharelado {data-navmenu="Ementas" data-icon="fa-graduation-cap"}
+=====================================================================
 
-
-<br>
+### DISCIPLINAS DO BACHARELADO {.no-mobile} 
 <br>
 ```{r}
-tabela(disciplinas_servico)
+tabela(disciplinas_de)
 ```
 
-### DISCIPLINAS DO BACHARELADO
-
+### DISCIPLINAS DO BACHARELADO {.mobile} 
+<br>
 ```{r}
 tabela(disciplinas_de)
 ```
