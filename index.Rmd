@@ -5,10 +5,8 @@ output:
     orientation: columns
     vertical_layout: fill
     theme:
-      primary: "#323AD9"
-      enable-gradients: TRUE
-      enable-shadows: TRUE
-      bootswatch: journal
+      secondary: "#dc3545" 
+      bootswatch: sketchy
       version: 5
     favicon: "img/logo.png"
     css: "style.css"
