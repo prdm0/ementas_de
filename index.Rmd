@@ -6,7 +6,6 @@ output:
     vertical_layout: fill
     theme:
       primary: "#323AD9"
-      secondary: "#BA2626"
       enable-gradients: TRUE
       enable-shadows: TRUE
       bootswatch: journal
