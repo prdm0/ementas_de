@@ -15,11 +15,14 @@ output:
 
 ```{r setup, include=FALSE}
 library(flexdashboard)
+library(shiny)
 library(dplyr)
 library(readr)
 # Install thematic and un-comment for themed static plots (i.e., ggplot2)
 # thematic::thematic_rmd()
 source("R/codigo_tabela.R")
+library(datasets)
+data(iris)
 ```
 
 Sobre {data-icon="fa-home"}
