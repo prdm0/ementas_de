@@ -42,7 +42,16 @@ Nessa aplicação, você poderá ter acesso às lista de conteúdos das ementas 
 
 3 - Para ter acesso às disciplinas de serviço, por favor, entre em contato com a Secretaria do DE.
 
-### DISCIPLINAS DE SERVIÇO
+### DISCIPLINAS DE SERVIÇO {.mobile}
+
+
+<br>
+<br>
+```{r}
+tabela(disciplinas_servico)
+```
+
+### DISCIPLINAS DE SERVIÇO {.nomobile}
 
 
 <br>
