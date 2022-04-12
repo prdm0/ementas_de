@@ -1,4 +1,8 @@
 /* Whole document: */
+img{
+     max-width:48px;
+     max-height:48px;
+}
 
 p {
   text-align: justify;

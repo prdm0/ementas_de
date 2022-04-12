@@ -1,5 +1,7 @@
 library(DT)
 library(vroom)
+library(stringr)
+library(dplyr)
 
 ementas <- vroom::vroom("data/banco_dados_ementas.csv", 
                         progress = FALSE, show_col_types = FALSE)
@@ -42,6 +44,20 @@ tabela <- function(x){
     selection = 'single', ## enable selection of a single row
     rownames = TRUE,                ## don't show row numbers/names
     caption = 'BANCO DE DADOS DAS DISCIPLINAS FORNECIDAS PELO DEPARTAMENTO DE ESTATÍSTICA - UFPB.'
+  )
+}
+
+search_all <- function(data, text){
+  x <-
+    data |>
+    filter_all(any_vars(str_detect(., regex(text, ignore_case = TRUE))))
+  
+  list(
+    Código = x$Código[1L],
+    Disciplina = x$Disciplina[1L],
+    Assuntos = x$Assuntos,
+    Horas = x$Horas[1L],
+    Créditos = x$Créditos[1L]
   )
 }
 
