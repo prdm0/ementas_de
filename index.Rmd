@@ -20,6 +20,7 @@ library(flexdashboard)
 library(shiny)
 library(dplyr)
 library(readr)
+library(fontawesome)
 # Install thematic and un-comment for themed static plots (i.e., ggplot2)
 # thematic::thematic_rmd()
 source("R/codigo_tabela.R")
@@ -46,22 +47,9 @@ Nessa aplicação, você poderá ter acesso às lista de conteúdos das ementas 
 
 3 - Para ter acesso às disciplinas de serviço, por favor, entre em contato com a Secretaria do DE.
 
-# Ementas de serviço {data-navmenu="Pesquisar Ementa" data-icon="fa-book-open"}
+# Outros cursos {data-navmenu="Pesquisar Ementa" data-icon="fa-book-open"}
 
-### DISCIPLINAS DE SERVIÇO {.no-mobile}
-
-<br>
-
-```{r}
-#tabela(disciplinas_servico)
-textInput(inputId = "value", label = "Disciplina", value = "CPEI")
-ementa <- reactive({
-  search_all(disciplinas_servico, text = input$value)
-})
-renderPrint({ementa()})
-```
-
-### DISCIPLINAS DE SERVIÇO {.mobile}
+### Outros cursos {.no-mobile}
 
 <br>
 
@@ -74,9 +62,22 @@ ementa <- reactive({
 renderPrint({ementa()})
 ```
 
-# Ementas do bacharelado {data-navmenu="Pesquisar Ementa" data-icon="fa-graduation-cap"}
+### Outros cursos {.mobile}
 
-### DISCIPLINAS DO BACHARELADO {.no-mobile}
+<br>
+
+```{r}
+#tabela(disciplinas_servico)
+textInput(inputId = "value", label = "Disciplina", value = "CPEI")
+ementa <- reactive({
+  search_all(disciplinas_servico, text = input$value)
+})
+renderPrint({ementa()})
+```
+
+# Bacharelado {data-navmenu="Pesquisar Ementa" data-icon="fa-graduation-cap"}
+
+### Bacharelado {.no-mobile}
 
 <br>
 
@@ -84,7 +85,7 @@ renderPrint({ementa()})
 tabela(disciplinas_de)
 ```
 
-### DISCIPLINAS DO BACHARELADO {.mobile}
+### Bacharelado {.mobile}
 
 <br>
 
@@ -95,6 +96,8 @@ tabela(disciplinas_de)
 # Base Geral {data-icon="fa-database"}
 
 Prezado docente, caso deseje colabora incluindo alguma disciplina ou corrigindo algum erro, baixe o arquivo CSV para fazer as alterações. Após a correção, envie o arquivo CSV alterado para o e-mail [pedro.rafael.marinho\@gmail.com](mailto:pedro.rafael.marinho@gmail.com){.email}.
+
+`r fontawesome::fa(name = "exclamation-triangle", fill = "#dc3545")` **ATENÇÃO**: Não altere o formato do arquivo CSV. Preencha mantendo o mesmo padrão para que assim a sugestão possa ser incluída na aplicação. 
 
 <br>
 
