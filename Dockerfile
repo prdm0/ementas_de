@@ -16,13 +16,14 @@ RUN apt-get update && apt-get install -y \
                     libmariadb-dev \
                     haskell-platform \
                     haskell-stack \
-                    pandoc
+                    pandoc \
+                    libghc-pandoc-citeproc-dev
 
 # install needed R packages
 RUN R -e "install.packages(c('shiny', 'flexdashboard', 'vroom', 'dplyr', 'fontawesome', 'stringr', 'DT'), dependencies = TRUE, repo='https://cloud.r-project.org/')"
 
 # make directory and copy Rmarkdown flexdashboard file in it
-#RUN mkdir /build_zone
+#RUN mkdir /home
 ADD . /home
 
 WORKDIR /home
