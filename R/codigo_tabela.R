@@ -27,7 +27,7 @@ disciplinas_de <- bacharelado_servico(ementas, serv = FALSE)
 disciplinas_servico <- bacharelado_servico(ementas, serv = TRUE)
 
 tabela <- function(x){
-  x |> 
+  x |>
   DT::datatable(
     editable = FALSE,
     options = list(
