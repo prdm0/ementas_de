@@ -16,6 +16,7 @@ output:
 runtime: shiny
 ---
 ```{r setup, include=FALSE}
+options(shiny.autoreload = TRUE)
 library(flexdashboard)
 library(shiny)
 library(dplyr)
@@ -99,5 +100,5 @@ Prezado docente, caso deseje colabora incluindo alguma disciplina ou corrigindo 
 <br>
 
 ```{r}
-tabela(ementas)
+shiny::renderUI({tabela(ementas)})
 ```
