@@ -101,7 +101,7 @@ ementaDE <- reactive({
 renderPrint({ementaDE()})
 ```
 
-# Códigos x Ementas {data-navmenu="Pesquisar ementa" data-icon="fa-eye"}
+# Códigos x Disciplinas {data-navmenu="Pesquisar ementa" data-icon="fa-eye"}
 <br>
 Algumas disciplinas fornecidas pelo Departamento de Estatística possuem o mesmo nome. Sendo assim, faz-se necessário saber o código correto da disciplina que se deseja pesquisar a ementa. A Tabela abaixo lista todas as disciplinas fornecidas pelo departameto, pelos seus respectivos códigos, carga horária e número de créditos.
 
