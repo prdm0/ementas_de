@@ -95,7 +95,7 @@ tabela(disciplinas_de)
 
 Prezado docente, caso deseje colabora incluindo alguma disciplina ou corrigindo algum erro, baixe o arquivo CSV para fazer as alterações. Após a correção, envie o arquivo CSV alterado para o e-mail [pedro.rafael.marinho\@gmail.com](mailto:pedro.rafael.marinho@gmail.com){.email}.
 
-`r fontawesome::fa(name = "exclamation-triangle", fill = "#dc3545")` **ATENÇÃO**: Não altere o formato do arquivo CSV. Preencha mantendo o mesmo padrão para que assim a sugestão possa ser incluída na aplicação. 
+`r fontawesome::fa(name = "exclamation-triangle", fill = "#dc3545")` **ATENÇÃO**: Não altere o formato do arquivo CSV. Preencha mantendo o mesmo padrão, para que assim, a sugestão possa ser incluída na aplicação. 
 
 <br>
 
