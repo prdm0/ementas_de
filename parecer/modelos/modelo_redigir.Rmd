@@ -1,0 +1,18 @@
+---
+author: Departamento de Estatística - DE, UFPB
+return-address: 
+  - Cidade Universitária s/n CEP 58.051-900 
+  - João Pessoa - PB
+address:
+  - Comissão de Dispensa de Disciplinas
+  - Departamento de Estatística - DE, CCEN, UFPB
+subject: SOLICITAÇÃO DE DISPENSA DE DISCIPLINA
+closing: Com os melhores cumprimentos,
+signature: A comissão.
+date: "`r format(Sys.Date(), '%d de %B de %Y')`"
+output: komaletter::komaletter
+params: 
+  corpo: ""    
+---
+  
+`r params$corpo`

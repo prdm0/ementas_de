@@ -298,9 +298,44 @@ renderUI({
 # downloadLink('downloadIND', 'Baixe o PDF do Parecer')
 ```
 
-# Informativo {data-navmenu="Parecer" data-icon="fa-info-circle"}
+# Redigir Parecer{data-navmenu="Parecer" data-icon="fa-keyboard"}
 
-### Informativo {data-navmenu="Parecer"}
+### Redigir Parecer {data-navmenu="Parecer"}
+
+Em situações em que alguns dos modelos prontos de pareceres não venha satisfazer a sua necessidade, você poderá redigir um parecer que se adeque à sua demanda. Use a caixa de texto abaixo para redigir o seu parecer. Você precisará apenas redigir o corpo do parecer, ou seja, não precisa assinar nem escrever o preâmbulo. Infelizmente, aqui, você será responsável por colocar todas as informações como: Nome do discente, matrícula, curso atual, curso anterior, disciplina(s) cursada(s), instituição anterior, ano em que cursou as disciplinas, instituição anterior, bem como tudo aquilo que venha necessitar descriminar em seu parecer.
+
+
+```{r}
+tippy::with_tippy(
+  textAreaInput("parecerVazio", "Redija o corpo do seu parecer aqui:", "", width = "1885px", height = "200px"),
+  tooltip = "Você deverá redigir apenas o corpo do parecer. Todo o resto (preâmbulo e assinatura) será incluído automaticamente. Você poderá usar código R Markdown, se achar necessário"
+)
+```
+
+```{r}
+output$downloadREDIGIR <- downloadHandler(
+  filename = "parecer.pdf",
+  content = function(file) {
+    rmarkdown::render(
+      "parecer/modelos/modelo_redigir.Rmd",
+      output_file = file,
+      params = list(
+        corpo = input$parecerVazio
+      ),
+      envir = new.env(parent = globalenv())
+    )
+  }
+)
+
+renderUI({
+  downloadButton("downloadREDIGIR", "Baixe o PDF do parecer", style = "width:100%;")
+})
+```
+
+
+# Complementação {data-navmenu="Parecer" data-icon="fa-info-circle"}
+
+### Complementação {data-navmenu="Parecer"}
 
 
 # Contribua com a base {data-icon="fa-database"}
