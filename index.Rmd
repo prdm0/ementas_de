@@ -23,15 +23,20 @@ library(flexdashboard)
 library(shiny)
 library(dplyr)
 library(fontawesome)
+library(tippy)
+library(glue)
+library(rlang)
 # Install thematic and un-comment for themed static plots (i.e., ggplot2)
 # thematic::thematic_rmd()
 source("R/codigo_tabela.R")
+source("R/parecer.R")
 ```
 
 # Sobre {data-icon="fa-home"}
 
 Rows {data-width=10}
 -------------------------------------
+
 ```{r  eval=require('leaflet'), echo = FALSE}
 library(leaflet)
 df_map <- reactive({leaflet() |>  
@@ -138,3 +143,164 @@ Prezado docente, caso deseje colabora incluindo alguma disciplina ou corrigindo 
 ```{r}
 shiny::renderUI({tabela(ementas)})
 ```
+
+# Deferido {data-navmenu="Parecer" data-icon="fa-thumbs-up"}
+
+### Deferido {data-navmenu="Parecer"}
+
+#### Discente
+
+```{r}
+tippy::with_tippy(
+  textInput(inputId = "nomeDE", label = "Nome:", value = ""),
+  tooltip = "Informe o nome do discente"
+)
+
+tippy::with_tippy(
+  textInput(inputId = "matriculaDE", label = "Matrícula:", value = ""),
+  tooltip = "Informe a matrícula do discente no vínculo atual com a UFPB"
+)
+
+tippy::with_tippy(
+  textInput(inputId = "cursoAtualDE", label = "Curso atual:", value = ""),
+  tooltip = "Informe o curso atual que o discente cursa na UFPB"
+)
+```
+
+#### Disciplina a ser dispensada
+
+```{r}
+tippy::with_tippy(
+  selectInput("disciplinaDE", label = "Código da disiciplina:",
+          choices = c(paste("COD: (", disciplina_codigos(is_DT = FALSE)$Códigos, "), ", disciplina_codigos(is_DT = FALSE)$Disciplinas, sep = ""))),
+  tooltip = 'Selecione o código da disciplina a ser dispensada. Se não souber o código, basta procurar nessa aplicação, na aba "Pesquisar ementas"'
+)
+```
+
+
+#### Outras informações do curso anterior 
+```{r}
+tippy::with_tippy(
+  textInput(inputId = "instituicaoAnteriorDE", label = "Intituição anterior:", value = ""),
+  tooltip = "Intorme a disciplina cursada na instituição anterior"
+)
+
+tippy::with_tippy(
+  textInput(inputId = "cursoAntigo", label = "Curso anterior:", value = ""),
+  tooltip = "Informe o curso anterior onde o discente cursou a disciplina a ser utilizada no processo de dispensa"
+)
+
+tippy::with_tippy(
+  textInput(inputId = "disciplinaCursadaDE", label = "Disciplina cursada:", value = ""),
+  tooltip = "Informe a disciplina cursada na instituição anterior. Poderá ser mais de uma. Ex: disciplina 1, disciplina 2 e disciplina 3"
+)
+
+tippy::with_tippy(
+  textInput(inputId = "anosCursadaDE", label = "Ano:", value = ""),
+  tooltip = "Informe o ano em que o discente cursou a disciplina a ser utilizada no processo de dispensa. Poderá ser mais de um. Ex: ano 1, ano 2 e ano 3"
+)
+
+output$downloadDE <- downloadHandler(
+  filename = "parecer_final_deferido.pdf",
+  content = function(file) {
+    rmarkdown::render(
+      "parecer/modelos/modelo_deferido.Rmd",
+      output_file = file,
+      params = list(
+        nome = input$nomeDE,
+        matricula = input$matriculaDE,
+        curso_atual = input$cursoAtualDE,
+        disciplina_cursada = input$disciplinaCursadaDE,
+        instituicao_antiga = input$instituicaoAnteriorDE,
+        anos_cursados = input$anosCursadaDE,
+        curso_anterior = input$cursoAntigo,
+        disciplina = input$disciplinaDE
+      ),
+      envir = new.env(parent = globalenv())
+    )
+  }
+)
+downloadLink('downloadDE', 'Baixe o PDF do Parecer')
+```
+
+# Indeferido {data-navmenu="Parecer" data-icon="fa-thumbs-down"}
+
+### Indeferido {data-navmenu="Parecer"}
+
+#### Discente 
+
+```{r}
+tippy::with_tippy(
+  textInput(inputId = "nomeIND", label = "Nome:", value = ""),
+  tooltip = "Informe o nome do discente"
+)
+
+tippy::with_tippy(
+  textInput(inputId = "matriculaIND", label = "Matrícula:", value = ""),
+  tooltip = "Informe a matrícula do discente no vínculo atual com a UFPB"
+)
+
+tippy::with_tippy(
+  textInput(inputId = "cursoAtualIND", label = "Curso atual:", value = ""),
+  tooltip = "Informe o curso atual que o discente cursa na UFPB"
+)
+```
+
+#### Disciplina não dispensada
+
+```{r}
+tippy::with_tippy(
+  selectInput("disciplinaIND", label = "Código da disiciplina:",
+          choices = c(paste("COD: (", disciplina_codigos(is_DT = FALSE)$Códigos, "), ", disciplina_codigos(is_DT = FALSE)$Disciplinas, sep = ""))),
+  tooltip = 'Selecione o código da disciplina solicitada para a dispensa pelo discente. Se não souber o código, basta procurar nessa aplicação, na aba "Pesquisar ementas"'
+)
+```
+
+#### Outras informações do curso anterior 
+```{r}
+tippy::with_tippy(
+  textInput(inputId = "instituicaoAnteriorIND", label = "Intituição anterior:", value = ""),
+  tooltip = "Intorme a disciplina cursada na instituição anterior"
+)
+
+tippy::with_tippy(
+  textInput(inputId = "cursoAntigoIND", label = "Curso anterior:", value = ""),
+  tooltip = "Informe o curso anterior onde o discente cursou a disciplina a ser utilizada no processo de dispensa"
+)
+
+tippy::with_tippy(
+  textInput(inputId = "disciplinaCursadaIND", label = "Disciplina cursada:", value = ""),
+  tooltip = "Informe a disciplina cursada na instituição anterior. Poderá ser mais de uma. Ex: disciplina 1, disciplina 2 e disciplina 3"
+)
+
+tippy::with_tippy(
+  textInput(inputId = "anosCursadaIND", label = "Ano:", value = ""),
+  tooltip = "Informe o ano em que o discente cursou a disciplina a ser utilizada no processo de dispensa. Poderá ser mais de um. Ex: ano 1, ano 2 e ano 3"
+)
+
+output$downloadIND <- downloadHandler(
+  filename = glue("parecer_final_indeferido.pdf"),
+  content = function(file) {
+    rmarkdown::render(
+      "parecer/modelos/modelo_indeferido.Rmd",
+      output_file = file,
+      params = list(
+        nome = input$nomeIND,
+        matricula = input$matriculaIND,
+        curso_atual = input$cursoAtualIND,
+        disciplina_cursada = input$disciplinaCursadaIND,
+        instituicao_antiga = input$instituicaoAnteriorIND,
+        anos_cursados = input$anosCursadaIND,
+        curso_anterior = input$cursoAntigoIND,
+        disciplina = input$disciplinaIND
+      ),
+      envir = new.env(parent = globalenv())
+    )
+  }
+)
+downloadLink('downloadIND', 'Baixe o PDF do Parecer')
+```
+
+# Informativo {data-navmenu="Parecer" data-icon="fa-info-circle"}
+
+### Informativo {data-navmenu="Parecer"}

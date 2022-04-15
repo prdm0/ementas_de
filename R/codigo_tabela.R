@@ -61,12 +61,13 @@ search_all <- function(data, text){
   )
 }
 
-disciplina_codigos <- function(){
+disciplina_codigos <- function(is_DT = TRUE){
   x <- ementas[match(unique(ementas$codigo), ementas$codigo), ] |> 
     select(codigo, nome_disciplina, horas, creditos) |> 
     arrange(nome_disciplina) |> 
     rename(Códigos = codigo, Disciplinas = nome_disciplina, Horas = horas, `Número de Créditos` = creditos)
   
+  if(is_DT){
   x |> 
     DT::datatable(
     editable = FALSE,
@@ -84,5 +85,8 @@ disciplina_codigos <- function(){
     selection = 'single', ## enable selection of a single row
     rownames = TRUE,                ## don't show row numbers/names
     caption = 'TABELA: PESQUISE OS CÓDIGOS DAS DISCIPLINAS FORNECIDAS PELO DEPARTAMENTO DE ESTATÍSTICA - UFPB.'
-  )
+    )
+  } else {
+    x
+  }
 }
