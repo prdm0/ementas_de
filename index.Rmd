@@ -24,8 +24,8 @@ library(shiny)
 library(dplyr)
 library(fontawesome)
 library(tippy)
-library(glue)
 library(rlang)
+library(shinyWidgets)
 # Install thematic and un-comment for themed static plots (i.e., ggplot2)
 # thematic::thematic_rmd()
 source("R/codigo_tabela.R")
@@ -132,18 +132,6 @@ renderPrint({ementaDE()})
 shiny::renderUI({disciplina_codigos()})
 ```
 
-# Contribua com a base {data-icon="fa-database"}
-
-Prezado docente, caso deseje colabora incluindo alguma disciplina ou corrigindo algum erro, baixe o arquivo CSV para fazer as alterações. Após a correção, envie o arquivo CSV alterado para o e-mail [pedro.rafael.marinho\@gmail.com](mailto:pedro.rafael.marinho@gmail.com){.email}.
-
-`r fontawesome::fa(name = "exclamation-triangle", fill = "#dc3545")` **ATENÇÃO**: Não altere o formato do arquivo CSV. Preencha mantendo o mesmo padrão, para que assim, a sugestão possa ser incluída na aplicação.
-
-<br>
-
-```{r}
-shiny::renderUI({tabela(ementas)})
-```
-
 # Deferido {data-navmenu="Parecer" data-icon="fa-thumbs-up"}
 
 ### Deferido {data-navmenu="Parecer"}
@@ -220,7 +208,12 @@ output$downloadDE <- downloadHandler(
     )
   }
 )
-downloadLink('downloadDE', 'Baixe o PDF do Parecer')
+
+renderUI({
+  downloadButton("downloadDE", "Baixe o PDF do parecer", style = "width:100%;")
+})
+
+#downloadLink('downloadDE', 'Baixe o PDF do Parecer', icon = shiny::icon("download"))
 ```
 
 # Indeferido {data-navmenu="Parecer" data-icon="fa-thumbs-down"}
@@ -279,7 +272,7 @@ tippy::with_tippy(
 )
 
 output$downloadIND <- downloadHandler(
-  filename = glue("parecer_final_indeferido.pdf"),
+  filename = "parecer_final_indeferido.pdf",
   content = function(file) {
     rmarkdown::render(
       "parecer/modelos/modelo_indeferido.Rmd",
@@ -298,9 +291,26 @@ output$downloadIND <- downloadHandler(
     )
   }
 )
-downloadLink('downloadIND', 'Baixe o PDF do Parecer')
+renderUI({
+  downloadButton("downloadIND", "Baixe o PDF do parecer", style = "width:100%;")
+})
+
+# downloadLink('downloadIND', 'Baixe o PDF do Parecer')
 ```
 
 # Informativo {data-navmenu="Parecer" data-icon="fa-info-circle"}
 
 ### Informativo {data-navmenu="Parecer"}
+
+
+# Contribua com a base {data-icon="fa-database"}
+
+Prezado docente, caso deseje colabora incluindo alguma disciplina ou corrigindo algum erro, baixe o arquivo CSV para fazer as alterações. Após a correção, envie o arquivo CSV alterado para o e-mail [pedro.rafael.marinho\@gmail.com](mailto:pedro.rafael.marinho@gmail.com){.email}.
+
+`r fontawesome::fa(name = "exclamation-triangle", fill = "#dc3545")` **ATENÇÃO**: Não altere o formato do arquivo CSV. Preencha mantendo o mesmo padrão, para que assim, a sugestão possa ser incluída na aplicação.
+
+<br>
+
+```{r}
+shiny::renderUI({tabela(ementas)})
+```

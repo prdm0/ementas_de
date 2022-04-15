@@ -5,9 +5,9 @@ account: pedro-rafael
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 6068862
-bundleId: 5800357
+bundleId: 5800803
 url: https://pedro-rafael.shinyapps.io/ementas_de/
-when: 1649977458.50528
-lastSyncTime: 1649977458.5053
+when: 1649991992.2195
+lastSyncTime: 1649991992.2195
 asMultiple: FALSE
 asStatic: FALSE
