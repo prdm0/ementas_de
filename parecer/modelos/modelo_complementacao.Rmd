@@ -36,7 +36,7 @@ Analisando-se o conteúdo programático dos componentes curriculares cursados, v
 
 Para avaliação desta complementação será realizado um teste de conhecimentos (prova), conforme a data, local e horário apresentados a seguir, bem como instruções visando a realização da mesma.
 
-  - **Data**: `r params$data`
+  - **Data**: `r format(params$data, '%d de %B de %Y')`
   - **Local**: `r params$local`
   - **Horário**: `r params$horario`
 

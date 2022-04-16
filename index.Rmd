@@ -28,8 +28,8 @@ library(tippy)
 library(rlang)
 library(shinyWidgets)
 library(shinyTime)
-# Install thematic and un-comment for themed static plots (i.e., ggplot2)
-# thematic::thematic_rmd()
+library(waiter)
+library(shinymanager)
 source("R/codigo_tabela.R")
 source("R/parecer.R")
 ```
@@ -96,39 +96,9 @@ ementa <- reactive({
 renderPrint({ementa()})
 ```
 
-### Outros cursos {.mobile}
-
-<br>
-
-```{r}
-tippy::with_tippy(
-  textInput(inputId = "value", label = "Disciplina", value = "CPEI"),
-  tooltip = "Digite o código, o nome da disciplina ou o assunto. Como existem interseções entre nomes de disciplinas e assuntos, aumente suas chances de encontrar o que deseja, pesquisando pelo código da disciplina que deseja consultar."
-)
-ementa <- reactive({
-  search_all(disciplinas_servico, text = input$value)
-})
-renderPrint({ementa()})
-```
-
 # Bacharelado {data-navmenu="Pesquisar ementa" data-icon="fa-graduation-cap"}
 
 ### Bacharelado {.no-mobile}
-
-<br>
-
-```{r}
-tippy::with_tippy(
-  textInput(inputId = "valueDE", label = "Disciplina", value = "CPEI"),
-  tooltip = "Digite o código, o nome da disciplina ou o assunto. Como podem haver interseções entre assuntos, aumente suas chances de encontrar o que deseja, pesquisando pelo código ou pelo nome da disciplina que deseja consultar."
-)
-ementaDE <- reactive({
-  search_all(disciplinas_de, text = input$valueDE)
-})
-renderPrint({ementaDE()})
-```
-
-### Bacharelado {.mobile}
 
 <br>
 
@@ -183,7 +153,8 @@ tippy::with_tippy(
 )
 ```
 
-
+Colums {.tabset}
+---
 #### Outras informações do curso anterior 
 ```{r}
 tippy::with_tippy(
@@ -267,6 +238,8 @@ tippy::with_tippy(
 )
 ```
 
+Colums {.tabset}
+---
 #### Outras informações do curso anterior 
 ```{r}
 tippy::with_tippy(
@@ -448,7 +421,7 @@ renderPrint({ementaCOMP()$Assuntos})
 ```{r}
 tippy::with_tippy(
   textAreaInput("assuntosCOMP", "Assuntos:", "", width = "500px", height = "200px"),
-  tooltip = "Com base na ementa listada acima, enumere nessa caixa de texto os assuntos que o discente deverá estudar para a prova de complementação."
+  tooltip = "Com base na ementa listada acima, enumere nessa caixa de texto os assuntos que o discente deverá estudar para a prova de complementação. (Dica: deixe uma linha em branco entre cada assunto)"
 )
 
 
