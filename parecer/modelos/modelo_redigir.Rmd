@@ -9,7 +9,7 @@ address:
 subject: SOLICITAÇÃO DE DISPENSA DE DISCIPLINA
 closing: Com os melhores cumprimentos,
 signature: A comissão.
-date: "`r format(Sys.Date(), '%d de %B de %Y')`"
+date: "`r format(Sys.Date(), '%d/%m/%Y')`"
 output: komaletter::komaletter
 params: 
   corpo: ""    
