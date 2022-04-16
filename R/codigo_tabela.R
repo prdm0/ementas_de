@@ -90,3 +90,8 @@ disciplina_codigos <- function(is_DT = TRUE){
     x
   }
 }
+
+extraindo_codigo <- function(x){
+  stringr::str_extract_all(x, pattern = "(?<=\\().*(?=\\))")[[1]]  
+}
+

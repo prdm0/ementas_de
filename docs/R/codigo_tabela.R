@@ -27,7 +27,7 @@ disciplinas_de <- bacharelado_servico(ementas, serv = FALSE)
 disciplinas_servico <- bacharelado_servico(ementas, serv = TRUE)
 
 tabela <- function(x){
-  x |> 
+  x |>
   DT::datatable(
     editable = FALSE,
     options = list(
@@ -43,7 +43,7 @@ tabela <- function(x){
     extensions = 'Buttons',
     selection = 'single', ## enable selection of a single row
     rownames = TRUE,                ## don't show row numbers/names
-    caption = 'BANCO DE DADOS DAS DISCIPLINAS FORNECIDAS PELO DEPARTAMENTO DE ESTATÍSTICA - UFPB.'
+    caption = 'TABELA: BANCO DE DADOS DAS DISCIPLINAS FORNECIDAS PELO DEPARTAMENTO DE ESTATÍSTICA - UFPB.'
   )
 }
 
@@ -61,3 +61,32 @@ search_all <- function(data, text){
   )
 }
 
+disciplina_codigos <- function(is_DT = TRUE){
+  x <- ementas[match(unique(ementas$codigo), ementas$codigo), ] |> 
+    select(codigo, nome_disciplina, horas, creditos) |> 
+    arrange(nome_disciplina) |> 
+    rename(Códigos = codigo, Disciplinas = nome_disciplina, Horas = horas, `Número de Créditos` = creditos)
+  
+  if(is_DT){
+  x |> 
+    DT::datatable(
+    editable = FALSE,
+    options = list(
+      pageLength = 10,
+      lengthMenu = c(5, 10, 15, 20),
+      paging = TRUE,    ## paginate the output
+      buttons = c('pdf', 'excel', 'csv', 'print'),
+      dom = 'Bfrtip',
+      scrollY = TRUE,
+      scrollX = TRUE,
+      language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Portuguese-Brasil.json')
+    ),
+    extensions = 'Buttons',
+    selection = 'single', ## enable selection of a single row
+    rownames = TRUE,                ## don't show row numbers/names
+    caption = 'TABELA: PESQUISE OS CÓDIGOS DAS DISCIPLINAS FORNECIDAS PELO DEPARTAMENTO DE ESTATÍSTICA - UFPB.'
+    )
+  } else {
+    x
+  }
+}

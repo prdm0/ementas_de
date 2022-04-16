@@ -1,47 +1,47 @@
 codigo,ementa,nome_disciplina,nome_abreviado,horas,creditos,servico
-110811,Distribuição de frequênica,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-110811,Tabelas,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-110811,Gráficos,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-110811,Medidas de posição,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-110811,Medidas de dispersão,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-110811,Introdução à probabilidade,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-110811,Esperança matemática,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-110811,Distribuições discretas,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-110811,Distribuições contínuas,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-110811,Noções elementares de amostragem,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-110811,Estimação pontual,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-110811,Estimação intervalar,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-110811,Testes de hipóteses,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-110811,Regressão,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-110811,Correlação,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-GDEST101,Tabelas,Bioestatística,BIO,60,4,TRUE
-GDEST101,Gráficos,Bioestatística,BIO,60,4,TRUE
-GDEST101,Medidas de posição,Bioestatística,BIO,60,4,TRUE
-GDEST101,Medidas de assimetria e curtose ,Bioestatística,BIO,60,4,TRUE
-GDEST101,Medidas de variabilidade,Bioestatística,BIO,60,4,TRUE
-GDEST101,Demografia e coeficientes vitais,Bioestatística,BIO,60,4,TRUE
-GDEST101,Introdução à probabilidade,Bioestatística,BIO,60,4,TRUE
-GDEST101,Modelos epidemiológicos,Bioestatística,BIO,60,4,TRUE
-GDEST101,Modelos probabilísticos (binomial e normal),Bioestatística,BIO,60,4,TRUE
-GDEST101,Introdução a teoria da amostragem,Bioestatística,BIO,60,4,TRUE
-GDEST101,Estimação pontual,Bioestatística,BIO,60,4,TRUE
-GDEST101,Estimação intervalar,Bioestatística,BIO,60,4,TRUE
-GDEST101,Testes de hipóteses para média (um e duas amostras),Bioestatística,BIO,60,4,TRUE
-GDEST101,Testes de hipóteses para a proporção (uma e duas amostras),Bioestatística,BIO,60,4,TRUE
-GDEST101,Teste de independência,Bioestatística,BIO,60,4,TRUE
-GDEST101,Análise de variância com um fator,Bioestatística,BIO,60,4,TRUE
-GDEST101,Regressão,Bioestatística,BIO,60,4,TRUE
-GDEST101,Correlação,Bioestatística,BIO,60,4,TRUE
-GDEST102,Estatística descritiva,Estatística para Ciências Humanas e Sociais I,ECHSI,60,4,TRUE
-GDEST102,Indicadores sociais e econômicos,Estatística para Ciências Humanas e Sociais I,ECHSI,60,4,TRUE
-GDEST102,Introdução à probabilidade,Estatística para Ciências Humanas e Sociais I,ECHSI,60,4,TRUE
-GDEST102,Modelos probabilísticos (binomial e normal),Estatística para Ciências Humanas e Sociais I,ECHSI,60,4,TRUE
-GDEST102,Introdução a teoria da amostragem,Estatística para Ciências Humanas e Sociais I,ECHSI,60,4,TRUE
-GDEST102,Estimação pontual,Estatística para Ciências Humanas e Sociais I,ECHSI,60,4,TRUE
-GDEST102,Intervalo de confiança,Estatística para Ciências Humanas e Sociais I,ECHSI,60,4,TRUE
-GDEST102,Teste de hipóteses para média,Estatística para Ciências Humanas e Sociais I,ECHSI,60,4,TRUE
-GDEST102,Teste de hipóteses para proporção,Estatística para Ciências Humanas e Sociais I,ECHSI,60,4,TRUE
-GDEST102,Teste de hipóteses para variância populacional,Estatística para Ciências Humanas e Sociais I,ECHSI,60,4,TRUE
+1108110,Distribuição de frequênica,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108110,Tabelas,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108110,Gráficos,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108110,Medidas de posição,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108110,Medidas de dispersão,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108110,Introdução à probabilidade,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108110,Esperança matemática,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108110,Distribuições discretas,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108110,Distribuições contínuas,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108110,Noções elementares de amostragem,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108110,Estimação pontual,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108110,Estimação intervalar,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108110,Testes de hipóteses,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108110,Regressão,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108110,Correlação,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+GDEST0101,Tabelas,Bioestatística,BIO,60,4,TRUE
+GDEST0101,Gráficos,Bioestatística,BIO,60,4,TRUE
+GDEST0101,Medidas de posição,Bioestatística,BIO,60,4,TRUE
+GDEST0101,Medidas de assimetria e curtose ,Bioestatística,BIO,60,4,TRUE
+GDEST0101,Medidas de variabilidade,Bioestatística,BIO,60,4,TRUE
+GDEST0101,Demografia e coeficientes vitais,Bioestatística,BIO,60,4,TRUE
+GDEST0101,Introdução à probabilidade,Bioestatística,BIO,60,4,TRUE
+GDEST0101,Modelos epidemiológicos,Bioestatística,BIO,60,4,TRUE
+GDEST0101,Modelos probabilísticos (binomial e normal),Bioestatística,BIO,60,4,TRUE
+GDEST0101,Introdução a teoria da amostragem,Bioestatística,BIO,60,4,TRUE
+GDEST0101,Estimação pontual,Bioestatística,BIO,60,4,TRUE
+GDEST0101,Estimação intervalar,Bioestatística,BIO,60,4,TRUE
+GDEST0101,Testes de hipóteses para média (um e duas amostras),Bioestatística,BIO,60,4,TRUE
+GDEST0101,Testes de hipóteses para a proporção (uma e duas amostras),Bioestatística,BIO,60,4,TRUE
+GDEST0101,Teste de independência,Bioestatística,BIO,60,4,TRUE
+GDEST0101,Análise de variância com um fator,Bioestatística,BIO,60,4,TRUE
+GDEST0101,Regressão,Bioestatística,BIO,60,4,TRUE
+GDEST0101,Correlação,Bioestatística,BIO,60,4,TRUE
+GDEST0102,Estatística descritiva,Estatística para Ciências Humanas e Sociais I,ECHSI,60,4,TRUE
+GDEST0102,Indicadores sociais e econômicos,Estatística para Ciências Humanas e Sociais I,ECHSI,60,4,TRUE
+GDEST0102,Introdução à probabilidade,Estatística para Ciências Humanas e Sociais I,ECHSI,60,4,TRUE
+GDEST0102,Modelos probabilísticos (binomial e normal),Estatística para Ciências Humanas e Sociais I,ECHSI,60,4,TRUE
+GDEST0102,Introdução a teoria da amostragem,Estatística para Ciências Humanas e Sociais I,ECHSI,60,4,TRUE
+GDEST0102,Estimação pontual,Estatística para Ciências Humanas e Sociais I,ECHSI,60,4,TRUE
+GDEST0102,Intervalo de confiança,Estatística para Ciências Humanas e Sociais I,ECHSI,60,4,TRUE
+GDEST0102,Teste de hipóteses para média,Estatística para Ciências Humanas e Sociais I,ECHSI,60,4,TRUE
+GDEST0102,Teste de hipóteses para proporção,Estatística para Ciências Humanas e Sociais I,ECHSI,60,4,TRUE
+GDEST0102,Teste de hipóteses para variância populacional,Estatística para Ciências Humanas e Sociais I,ECHSI,60,4,TRUE
 GDEST100,Introdução a teoria da amostragem,Estatística Básica,EB,60,4,TRUE
 GDEST100,Tabelas,Estatística Básica,EB,60,4,TRUE
 GDEST100,Gráficos,Estatística Básica,EB,60,4,TRUE
@@ -64,17 +64,17 @@ GDEST100,Correlação,Estatística Básica,EB,60,4,TRUE
 1108188,Regressão linear simples,Introdução à Estatística,IE,60,4,TRUE
 1108188,Análise de variância (ANOVA),Introdução à Estatística,IE,60,4,TRUE
 1108188,Introdução ao controle estatístico de processo,Introdução à Estatística,IE,60,4,TRUE
-GDEST103,Regressão,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
-GDEST103,Correlação,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
-GDEST103,Teste de comparação de duas médias,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
-GDEST103,Teste de compação de duas proporções,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
-GDEST103,Teste de compação de duas variâncias populacionais,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
-GDEST103,Análise de variância com um fator,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
-GDEST103,Teste de compação múltipla,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
-GDEST103,Teste qui-quadrado,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
-GDEST103,Teste de normalidade,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
-GDEST103,Teste de independência,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
-GDEST103,Comparação de duas ou mais populações,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
+GDEST0103,Regressão,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
+GDEST0103,Correlação,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
+GDEST0103,Teste de comparação de duas médias,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
+GDEST0103,Teste de compação de duas proporções,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
+GDEST0103,Teste de compação de duas variâncias populacionais,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
+GDEST0103,Análise de variância com um fator,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
+GDEST0103,Teste de compação múltipla,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
+GDEST0103,Teste qui-quadrado,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
+GDEST0103,Teste de normalidade,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
+GDEST0103,Teste de independência,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
+GDEST0103,Comparação de duas ou mais populações,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
 1108124,Tipos de amostragem probabilística,Métodos Estatísticos Aplicados às Ciências Tecnológicas,MEACT,60,4,TRUE
 1108124,Distribuição amostral da média,Métodos Estatísticos Aplicados às Ciências Tecnológicas,MEACT,60,4,TRUE
 1108124,Distribuição amostral da proporção,Métodos Estatísticos Aplicados às Ciências Tecnológicas,MEACT,60,4,TRUE
@@ -108,3 +108,26 @@ GDEST103,Comparação de duas ou mais populações,Estatística para Ciências H
 1108174,Correlação,Estatística Vital,EV,45,3,TRUE
 1108174,Regressão linear simples,Estatística Vital,EV,45,3,TRUE
 1108174,Análise de variância (ANOVA),Estatística Vital,EV,45,3,TRUE
+1108104,Análise de dados estatísticos,Estatística ,E,45,3,TRUE
+1108104,Noções de probabilidade,Estatística ,E,45,3,TRUE
+1108104,Variáveis aleatórias,Estatística ,E,45,3,TRUE
+1108104,Probabilidade condicional e independência,Estatística ,E,45,3,TRUE
+1108104,Esperança matemática,Estatística ,E,45,3,TRUE
+1108104,Distribuições de probabilidade: binomial e normal,Estatística ,E,45,3,TRUE
+1108104,Teoria da amostragem,Estatística ,E,45,3,TRUE
+1108104,Tipos de amostra: probabilística e não-probabilística,Estatística ,E,45,3,TRUE
+1108104,Teste de hipóteses: média e proporção,Estatística ,E,45,3,TRUE
+1108104,Intervaços de confiança: média e proporção,Estatística ,E,45,3,TRUE
+1108104,Coeficiente de correlação linear,Estatística ,E,45,3,TRUE
+1108104,Regressão linear simples,Estatística ,E,45,3,TRUE
+1108116,Análise de dados estatísticos,Estatística Vital,EV,60,4,TRUE
+1108116,Coeficientes vitais,Estatística Vital,EV,60,4,TRUE
+1108116,Probabilidade,Estatística Vital,EV,60,4,TRUE
+1108116,Distribuições de probabilidade: binomial e normal,Estatística Vital,EV,60,4,TRUE
+1108116,Disrtibuição de médias amostrais,Estatística Vital,EV,60,4,TRUE
+1108116,Teoria elementar da amostragem,Estatística Vital,EV,60,4,TRUE
+1108116,Estimação pontual,Estatística Vital,EV,60,4,TRUE
+1108116,Teste de hipótese,Estatística Vital,EV,60,4,TRUE
+1108116,Correlação linear ,Estatística Vital,EV,60,4,TRUE
+1108116,Regressão linear,Estatística Vital,EV,60,4,TRUE
+1108116,Análise de variância (ANOVA),Estatística Vital,EV,60,4,TRUE

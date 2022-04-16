@@ -1,0 +1,45 @@
+---
+author: Departamento de Estatística - DE, UFPB
+return-address: 
+  - Cidade Universitária s/n CEP 58.051-900 
+  - João Pessoa - PB
+address:
+  - Comissão de Dispensa de Disciplinas
+  - Departamento de Estatística - DE, CCEN, UFPB
+subject: SOLICITAÇÃO DE DISPENSA DE DISCIPLINA
+closing: Com os melhores cumprimentos,
+signature: A comissão.
+date: "`r format(Sys.Date(), '%d de %B de %Y')`"
+output: komaletter::komaletter
+params: 
+  nome: ""
+  matricula: ""
+  curso_atual: ""
+  disciplina_cursada: ""
+  instituicao_antiga: ""
+  anos_cursados: ""
+  curso_anterior: ""
+  disciplina: ""
+  data: ""
+  horario: ""
+  lista_complementacao: ""
+  local: ""
+---
+  
+No presente processo, o(a) aluno(a) `r params$nome`, matrícula Nº `r params$matricula`, do curso de `r params$curso_atual`, solicita o aproveitamento da disciplina `r params$disciplina_cursada`, cursadas no(a) `r params$instituicao_antiga`, em `r params$anos_cursados`, considerando a equivalência com a disciplina `r params$disciplina`, deste departamento.
+
+Analisando-se o conteúdo programático dos componentes curriculares cursados, verificou-se que os conteúdos programáticos das referidas disciplinas **É INFERIOR** ao exigido pela disciplina `r params$disciplina`. Sendo assim, segundo a resolução Nº 29/2020, Art. 42, inciso V, do CONSEPE, será necessária realizar a prova de **COMPLEMENTAÇÃO** do conteúdo, desde que esse processo retorne ao Departamento de Estatística no prazo máximo de dez (10) dias úteis antes da data de realização da prova.
+
+**Conteúdos da prova de complementação**:
+
+`r params$lista_complementacao`
+
+Para avaliação desta complementação será realizado um teste de conhecimentos (prova), conforme a data, local e horário apresentados a seguir, bem como instruções visando a realização da mesma.
+
+  - **Data**: `r params$data`
+  - **Local**: `r params$local`
+  - **Horário**: `r params$horario`
+
+**IMPORTANTE**: No dia da PROVA o discente deverá portar um documento oficial com foto para sua identificação.
+
+**INFORMAÇÃO**: O Departamento de Estatística (DE) conta com um programa de monitoria no qual o(a) aluno(a) poderá tirar dúvidas, dos tópicos mencionados acima, com uma equipe de monitores, orientados pelos professores do DE. A monitoria do DE está localizada nas dependências do Departamento de Estatística/CCEN.
