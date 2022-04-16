@@ -35,7 +35,16 @@ source("R/parecer.R")
 ```
 
 # Sobre {data-icon="fa-home"}
-
+```{r}
+    modalDialog(
+      title = NULL,
+      "Visualize esse dashboard pela tela de um computador. Você poderá enfrentar dificuldades para",
+      "visualizar e manipular alguns elementos, caso esteja utilizando um dispositivo móvel de tela pequena.",
+      "Nesses dispositivos, visualizar na horizontal poderá ajudar na renderização dos conteúdos.",
+      easyClose = FALSE,
+      footer = modalButton("Entendi")
+    )
+```
 Rows {data-width=100}
 -------------------------------------
 
@@ -77,8 +86,10 @@ Nessa aplicação, você poderá ter acesso às lista de conteúdos das ementas 
 <br>
 
 ```{r}
-#tabela(disciplinas_servico)
-textInput(inputId = "value", label = "Disciplina", value = "CPEI")
+tippy::with_tippy(
+  textInput(inputId = "value", label = "Disciplina", value = "CPEI"),
+  tooltip = "Digite o código, o nome da disciplina ou o assunto. Como existem interseções entre nomes de disciplinas e assuntos, aumente suas chances de encontrar o que deseja, pesquisando pelo código da disciplina que deseja consultar."
+)
 ementa <- reactive({
   search_all(disciplinas_servico, text = input$value)
 })
@@ -90,8 +101,10 @@ renderPrint({ementa()})
 <br>
 
 ```{r}
-#tabela(disciplinas_servico)
-textInput(inputId = "value", label = "Disciplina", value = "CPEI")
+tippy::with_tippy(
+  textInput(inputId = "value", label = "Disciplina", value = "CPEI"),
+  tooltip = "Digite o código, o nome da disciplina ou o assunto. Como existem interseções entre nomes de disciplinas e assuntos, aumente suas chances de encontrar o que deseja, pesquisando pelo código da disciplina que deseja consultar."
+)
 ementa <- reactive({
   search_all(disciplinas_servico, text = input$value)
 })
@@ -105,8 +118,10 @@ renderPrint({ementa()})
 <br>
 
 ```{r}
-#tabela(disciplinas_servico)
-textInput(inputId = "valueDE", label = "Disciplina", value = "CPEI")
+tippy::with_tippy(
+  textInput(inputId = "valueDE", label = "Disciplina", value = "CPEI"),
+  tooltip = "Digite o código, o nome da disciplina ou o assunto. Como podem haver interseções entre assuntos, aumente suas chances de encontrar o que deseja, pesquisando pelo código ou pelo nome da disciplina que deseja consultar."
+)
 ementaDE <- reactive({
   search_all(disciplinas_de, text = input$valueDE)
 })
@@ -118,8 +133,10 @@ renderPrint({ementaDE()})
 <br>
 
 ```{r}
-#tabela(disciplinas_servico)
-textInput(inputId = "valueDE", label = "Disciplina", value = "CPEI")
+tippy::with_tippy(
+  textInput(inputId = "valueDE", label = "Disciplina", value = "CPEI"),
+  tooltip = "Digite o código, o nome da disciplina ou o assunto. Como podem haver interseções entre assuntos, aumente suas chances de encontrar o que deseja, pesquisando pelo código ou pelo nome da disciplina que deseja consultar."
+)
 ementaDE <- reactive({
   search_all(disciplinas_de, text = input$valueDE)
 })
@@ -142,17 +159,17 @@ Colums {.tabset}
 ```{r}
 tippy::with_tippy(
   textInput(inputId = "nomeDE", label = "Nome:", value = ""),
-  tooltip = "Informe o nome do discente"
+  tooltip = "Informe o nome do discente."
 )
 
 tippy::with_tippy(
   textInput(inputId = "matriculaDE", label = "Matrícula:", value = ""),
-  tooltip = "Informe a matrícula do discente no vínculo atual com a UFPB"
+  tooltip = "Informe a matrícula do discente no vínculo atual com a UFPB."
 )
 
 tippy::with_tippy(
   textInput(inputId = "cursoAtualDE", label = "Curso atual:", value = ""),
-  tooltip = "Informe o curso atual que o discente cursa na UFPB"
+  tooltip = "Informe o curso atual que o discente cursa na UFPB."
 )
 ```
 
@@ -162,7 +179,7 @@ tippy::with_tippy(
 tippy::with_tippy(
   selectInput("disciplinaDE", label = "Código da disiciplina:",
           choices = c(paste("COD: (", disciplina_codigos(is_DT = FALSE)$Códigos, "), ", disciplina_codigos(is_DT = FALSE)$Disciplinas, sep = ""))),
-  tooltip = 'Selecione o código da disciplina a ser dispensada. Se não souber o código, basta procurar nessa aplicação, na aba "Pesquisar ementas"'
+  tooltip = 'Selecione o código da disciplina a ser dispensada. Se não souber o código, basta procurar nessa aplicação, na aba "Pesquisar ementas".'
 )
 ```
 
@@ -171,22 +188,22 @@ tippy::with_tippy(
 ```{r}
 tippy::with_tippy(
   textInput(inputId = "instituicaoAnteriorDE", label = "Intituição anterior:", value = ""),
-  tooltip = "Intorme a disciplina cursada na instituição anterior"
+  tooltip = "Intorme a disciplina cursada na instituição anterior."
 )
 
 tippy::with_tippy(
   textInput(inputId = "cursoAntigo", label = "Curso anterior:", value = ""),
-  tooltip = "Informe o curso anterior onde o discente cursou a disciplina a ser utilizada no processo de dispensa"
+  tooltip = "Informe o curso anterior onde o discente cursou a disciplina a ser utilizada no processo de dispensa."
 )
 
 tippy::with_tippy(
   textInput(inputId = "disciplinaCursadaDE", label = "Disciplina cursada:", value = ""),
-  tooltip = "Informe a disciplina cursada na instituição anterior. Poderá ser mais de uma. Ex: disciplina 1, disciplina 2 e disciplina 3"
+  tooltip = "Informe a disciplina cursada na instituição anterior. Poderá ser mais de uma. Ex: disciplina 1, disciplina 2 e disciplina 3."
 )
 
 tippy::with_tippy(
   textInput(inputId = "anosCursadaDE", label = "Ano:", value = ""),
-  tooltip = "Informe o ano em que o discente cursou a disciplina a ser utilizada no processo de dispensa. Poderá ser mais de um. Ex: ano 1, ano 2 e ano 3"
+  tooltip = "Informe o ano em que o discente cursou a disciplina a ser utilizada no processo de dispensa. Poderá ser mais de um. Ex: ano 1, ano 2 e ano 3."
 )
 
 output$downloadDE <- downloadHandler(
@@ -211,7 +228,7 @@ output$downloadDE <- downloadHandler(
 )
 
 renderUI({
-  downloadButton("downloadDE", "Baixe o PDF do despacho", style = "width:100%;")
+  downloadButton("downloadDE", "Baixe o PDF do despacho", style = "width:25%;")
 })
 
 #downloadLink('downloadDE', 'Baixe o PDF do despacho', icon = shiny::icon("download"))
@@ -226,17 +243,17 @@ Colums {.tabset}
 ```{r}
 tippy::with_tippy(
   textInput(inputId = "nomeIND", label = "Nome:", value = ""),
-  tooltip = "Informe o nome do discente"
+  tooltip = "Informe o nome do discente."
 )
 
 tippy::with_tippy(
   textInput(inputId = "matriculaIND", label = "Matrícula:", value = ""),
-  tooltip = "Informe a matrícula do discente no vínculo atual com a UFPB"
+  tooltip = "Informe a matrícula do discente no vínculo atual com a UFPB."
 )
 
 tippy::with_tippy(
   textInput(inputId = "cursoAtualIND", label = "Curso atual:", value = ""),
-  tooltip = "Informe o curso atual que o discente cursa na UFPB"
+  tooltip = "Informe o curso atual que o discente cursa na UFPB."
 )
 ```
 
@@ -246,7 +263,7 @@ tippy::with_tippy(
 tippy::with_tippy(
   selectInput("disciplinaIND", label = "Código da disiciplina:",
           choices = c(paste("COD: (", disciplina_codigos(is_DT = FALSE)$Códigos, "), ", disciplina_codigos(is_DT = FALSE)$Disciplinas, sep = ""))),
-  tooltip = 'Selecione o código da disciplina solicitada para a dispensa pelo discente. Se não souber o código, basta procurar nessa aplicação, na aba "Pesquisar ementas"'
+  tooltip = 'Selecione o código da disciplina solicitada para a dispensa pelo discente. Se não souber o código, basta procurar nessa aplicação, na aba "Pesquisar ementas".'
 )
 ```
 
@@ -254,22 +271,22 @@ tippy::with_tippy(
 ```{r}
 tippy::with_tippy(
   textInput(inputId = "instituicaoAnteriorIND", label = "Intituição anterior:", value = ""),
-  tooltip = "Intorme a disciplina cursada na instituição anterior"
+  tooltip = "Intorme a disciplina cursada na instituição anterior."
 )
 
 tippy::with_tippy(
   textInput(inputId = "cursoAntigoIND", label = "Curso anterior:", value = ""),
-  tooltip = "Informe o curso anterior onde o discente cursou a disciplina a ser utilizada no processo de dispensa"
+  tooltip = "Informe o curso anterior onde o discente cursou a disciplina a ser utilizada no processo de dispensa."
 )
 
 tippy::with_tippy(
   textInput(inputId = "disciplinaCursadaIND", label = "Disciplina cursada:", value = ""),
-  tooltip = "Informe a disciplina cursada na instituição anterior. Poderá ser mais de uma. Ex: disciplina 1, disciplina 2 e disciplina 3"
+  tooltip = "Informe a disciplina cursada na instituição anterior. Poderá ser mais de uma. Ex: disciplina 1, disciplina 2 e disciplina 3."
 )
 
 tippy::with_tippy(
   textInput(inputId = "anosCursadaIND", label = "Ano:", value = ""),
-  tooltip = "Informe o ano em que o discente cursou a disciplina a ser utilizada no processo de dispensa. Poderá ser mais de um. Ex: ano 1, ano 2 e ano 3"
+  tooltip = "Informe o ano em que o discente cursou a disciplina a ser utilizada no processo de dispensa. Poderá ser mais de um. Ex: ano 1, ano 2 e ano 3."
 )
 
 output$downloadIND <- downloadHandler(
@@ -293,7 +310,7 @@ output$downloadIND <- downloadHandler(
   }
 )
 renderUI({
-  downloadButton("downloadIND", "Baixe o PDF do despacho", style = "width:100%;")
+  downloadButton("downloadIND", "Baixe o PDF do despacho", style = "width:25%;")
 })
 
 # downloadLink('downloadIND', 'Baixe o PDF do Parecer')
@@ -309,8 +326,8 @@ Em situações em que alguns dos modelos prontos de pareceres não venha satisfa
 
 ```{r}
 tippy::with_tippy(
-  textAreaInput("parecerVazio", "Redija o corpo do seu parecer aqui:", "", width = "1885px", height = "200px"),
-  tooltip = "Você deverá redigir apenas o corpo do parecer. Todo o resto (preâmbulo e assinatura) será incluído automaticamente. Você poderá usar código R Markdown, se achar necessário"
+  textAreaInput("parecerVazio", "Redija o corpo do seu parecer aqui:", "", width = "1000px", height = "350px"),
+  tooltip = "Você deverá redigir apenas o corpo do parecer. Todo o resto (preâmbulo e assinatura) será incluído automaticamente no PDF a ser gerado. Assim como em qualquer campo de entrada de texto dessa aplicação, você poderá usar, se desejar, a sintaxe de R Markdown."
 )
 ```
 
@@ -330,7 +347,7 @@ output$downloadREDIGIR <- downloadHandler(
 )
 
 renderUI({
-  downloadButton("downloadREDIGIR", "Baixe o PDF do despacho", style = "width:100%;")
+  downloadButton("downloadREDIGIR", "Baixe o PDF do despacho", style = "width:15%;")
 })
 ```
 
@@ -344,15 +361,15 @@ Colums {.tabset}
 ```{r}
 tippy::with_tippy(
   textInput(inputId = "nomeCOMP", label = "Nome:", value = ""),
-  tooltip = "Informe o nome do discente"
+  tooltip = "Informe o nome do discente."
 )
 tippy::with_tippy(
   textInput(inputId = "matriculaCOMP", label = "Matrícula:", value = ""),
-  tooltip = "Informe a matrícula atual do discente na UFPB"
+  tooltip = "Informe a matrícula atual do discente na UFPB."
 )
 tippy::with_tippy(
   textInput(inputId = "cursoCOMP", label = "Curso:", value = ""),
-  tooltip = "Informe o curso atual do discente na UFPB"
+  tooltip = "Informe o curso atual do discente na UFPB."
 )
 ```
 #### Disciplina a ser dispensada
@@ -361,7 +378,7 @@ tippy::with_tippy(
 tippy::with_tippy(
   selectInput("disciplinaCOMP", label = "Código da disciplina:",
           choices = c(paste("COD: (", disciplina_codigos(is_DT = FALSE)$Códigos, "), ", disciplina_codigos(is_DT = FALSE)$Disciplinas, sep = ""))),
-  tooltip = "Disciplina que o dicente poderá dispensar, em caso de aprovação na prova de complementação"
+  tooltip = "Disciplina que o discente poderá dispensar, em caso de aprovação na prova de complementação."
 )
 ```
 
@@ -369,22 +386,22 @@ tippy::with_tippy(
 ```{r}
 tippy::with_tippy(
   textInput(inputId = "instituicaoAnteriorCOMP", label = "Intituição anterior:", value = ""),
-  tooltip = "Intorme a instituição anterior"
+  tooltip = "Informe a instituição anterior do discente."
 )
 
 tippy::with_tippy(
   textInput(inputId = "cursoAntigoCOMP", label = "Curso anterior:", value = ""),
-  tooltip = "Informe o curso anterior do discente"
+  tooltip = "Informe o curso anterior do discente."
 )
 
 tippy::with_tippy(
   textInput(inputId = "disciplinaCursadaCOMP", label = "Disciplina cursada:", value = ""),
-  tooltip = "Informe a disciplina cursada na instituição anterior. Poderá ser mais de uma. Ex: disciplina 1, disciplina 2 e disciplina 3"
+  tooltip = "Informe a disciplina cursada na instituição anterior. Poderá ser mais de uma. Ex: disciplina 1, disciplina 2 e disciplina 3."
 )
 
 tippy::with_tippy(
   textInput(inputId = "anosCursadosCOMP", label = "Ano:", value = ""),
-  tooltip = "Informe o ano em que o discente cursou a disciplina a ser utilizada no processo de dispensa. Poderá ser mais de um. Ex: ano 1, ano 2 e ano 3"
+  tooltip = "Informe o ano em que o discente cursou a disciplina a ser utilizada no processo de dispensa. Poderá ser mais de um. Ex: ano 1, ano 2 e ano 3."
 )
 ```
 
@@ -402,15 +419,18 @@ tippy::with_tippy(
       dateFormat = "dd-mm-yyyy",
       language = "pt-BR"
   ),
-  tooltip = "Selecione uma data para a prova de complementação"
+  tooltip = "Selecione uma data para para ser realizada a prova de complementação."
 )
 
 tippy::with_tippy(
   textInput(inputId = "horarioCOMP", label = "Horário:", value = "Qual o horário?"),
-  tooltip = "Informe o horário da prova de complementação. É importante especificar o início e término. Ex: 14h (início) as 16 (término)"
+  tooltip = "Informe o horário da prova de complementação. É importante especificar o início e término. Ex: 14h00 (início) as 16h00 (término)."
 )
 
-textInput(inputId = "localCOMP", label = "Local:", value = "Qual o local?")
+tippy::with_tippy(
+  textInput(inputId = "localCOMP", label = "Local:", value = "Qual o local?"),
+  tooltip = "Informe o local, na UFPB, onde será realizada a prova de complementação."
+)
 ```
 
 ```{r}
@@ -428,7 +448,7 @@ renderPrint({ementaCOMP()$Assuntos})
 ```{r}
 tippy::with_tippy(
   textAreaInput("assuntosCOMP", "Assuntos:", "", width = "500px", height = "200px"),
-  tooltip = "Com base na lista acima, enumere nessa caixa de texto os assuntos que que o discente deverá estudar para a prova de complementação"
+  tooltip = "Com base na ementa listada acima, enumere nessa caixa de texto os assuntos que o discente deverá estudar para a prova de complementação."
 )
 
 
@@ -461,7 +481,7 @@ output$downloadCOMP <- downloadHandler(
 )
 
 renderUI({
-  downloadButton("downloadCOMP", "Baixe o PDF do despacho", style = "width:100%;")
+  downloadButton("downloadCOMP", "Baixe o PDF do despacho", style = "width:30%;")
 })
 ```
 

@@ -1,5 +1,5 @@
 codigo,ementa,nome_disciplina,nome_abreviado,horas,creditos,servico
-1108110,Distribuição de frequênica,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108110,Distribuição de frequência,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
 1108110,Tabelas,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
 1108110,Gráficos,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
 1108110,Medidas de posição,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
@@ -67,10 +67,10 @@ GDEST100,Correlação,Estatística Básica,EB,60,4,TRUE
 GDEST0103,Regressão,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
 GDEST0103,Correlação,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
 GDEST0103,Teste de comparação de duas médias,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
-GDEST0103,Teste de compação de duas proporções,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
-GDEST0103,Teste de compação de duas variâncias populacionais,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
+GDEST0103,Teste de comparação de duas proporções,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
+GDEST0103,Teste de comparação de duas variâncias populacionais,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
 GDEST0103,Análise de variância com um fator,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
-GDEST0103,Teste de compação múltipla,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
+GDEST0103,Teste de comparação múltipla,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
 GDEST0103,Teste qui-quadrado,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
 GDEST0103,Teste de normalidade,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
 GDEST0103,Teste de independência,Estatística para Ciências Humanas e Sociais II,ECHSII,60,4,TRUE
@@ -117,17 +117,58 @@ GDEST0103,Comparação de duas ou mais populações,Estatística para Ciências 
 1108104,Teoria da amostragem,Estatística ,E,45,3,TRUE
 1108104,Tipos de amostra: probabilística e não-probabilística,Estatística ,E,45,3,TRUE
 1108104,Teste de hipóteses: média e proporção,Estatística ,E,45,3,TRUE
-1108104,Intervaços de confiança: média e proporção,Estatística ,E,45,3,TRUE
+1108104,Intervalos de confiança: média e proporção,Estatística ,E,45,3,TRUE
 1108104,Coeficiente de correlação linear,Estatística ,E,45,3,TRUE
 1108104,Regressão linear simples,Estatística ,E,45,3,TRUE
 1108116,Análise de dados estatísticos,Estatística Vital,EV,60,4,TRUE
 1108116,Coeficientes vitais,Estatística Vital,EV,60,4,TRUE
 1108116,Probabilidade,Estatística Vital,EV,60,4,TRUE
 1108116,Distribuições de probabilidade: binomial e normal,Estatística Vital,EV,60,4,TRUE
-1108116,Disrtibuição de médias amostrais,Estatística Vital,EV,60,4,TRUE
+1108116,Distribuição de médias amostrais,Estatística Vital,EV,60,4,TRUE
 1108116,Teoria elementar da amostragem,Estatística Vital,EV,60,4,TRUE
 1108116,Estimação pontual,Estatística Vital,EV,60,4,TRUE
 1108116,Teste de hipótese,Estatística Vital,EV,60,4,TRUE
 1108116,Correlação linear ,Estatística Vital,EV,60,4,TRUE
 1108116,Regressão linear,Estatística Vital,EV,60,4,TRUE
 1108116,Análise de variância (ANOVA),Estatística Vital,EV,60,4,TRUE
+1108105,Conceitos Básicos em Relação ao fenômeno Educacional,Estatística Aplicada à Educação I,EAEI,60,4,TRUE
+1108105,Normas e técnicas utilizadas em educação para distribuições de frequência e gráficos,Estatística Aplicada à Educação I,EAEI,60,4,TRUE
+1108105,Medidas de  tendência central nos estudos pedagógicos,Estatística Aplicada à Educação I,EAEI,60,4,TRUE
+1108105,Escores em variáveis educacionais,Estatística Aplicada à Educação I,EAEI,60,4,TRUE
+1108105,Estudos de probabilidades ligados à fenômenos pedagógicos,Estatística Aplicada à Educação I,EAEI,60,4,TRUE
+1108105,Coeficiente de correlação linear de dados educacionais numéricos,Estatística Aplicada à Educação I,EAEI,60,4,TRUE
+1108106,"Espaço amostral, eventos,  tipos de eventos, definição de probabilidade, axiomas, probabilidade de resultados igualmente possíveis",Estatística Aplicada à Educação II,EAEII,75,5,TRUE
+1108106,"Distribuição de probabilidade: distribuição binomial, distribuição normal e norma reduzida",Estatística Aplicada à Educação II,EAEII,75,5,TRUE
+1108106,"Amostragem: amostras aleatórias, distribuição amostral das médias e distribuição das diferenças e somas",Estatística Aplicada à Educação II,EAEII,75,5,TRUE
+1108106,"Estimação: estimativas sem vício, estimativas por ponto e por intervalo",Estatística Aplicada à Educação II,EAEII,75,5,TRUE
+1108106,"Testes de Hipóteses: erros, nível de significância, Testes que envolvem a normal, teste t-Student e teste qui-quadrado",Estatística Aplicada à Educação II,EAEII,75,5,TRUE
+1108107,Introdução às ideias básicas do método estatístico,Estatística Aplicada ao Serviço Social,EASS,60,6,TRUE
+1108107,Fases do Trabalho Estatístico,Estatística Aplicada ao Serviço Social,EASS,60,6,TRUE
+1108107,Introdução à Probabilidade,Estatística Aplicada ao Serviço Social,EASS,60,6,TRUE
+1108107,Variáveis Aleatórias,Estatística Aplicada ao Serviço Social,EASS,60,6,TRUE
+1108107,Distribuição de Probabilidade,Estatística Aplicada ao Serviço Social,EASS,60,6,TRUE
+1108107,Introdução à Amostragem,Estatística Aplicada ao Serviço Social,EASS,60,6,TRUE
+1108107,Estimação de Parâmetros,Estatística Aplicada ao Serviço Social,EASS,60,6,TRUE
+1108107,Teste de Hipóteses,Estatística Aplicada ao Serviço Social,EASS,60,6,TRUE
+1108174,Análise de dados estatísticos,Estatística Vital,EV,45,3,TRUE
+1108174,Coeficientes vitais,Estatística Vital,EV,45,3,TRUE
+1108174,"Probabilidade: espaço amostral, eventos, definição de probabilidade, propriedades, probabilidades da união e interseção",Estatística Vital,EV,45,3,TRUE
+1108174,Distribuição de Probabilidade: binomial e normal,Estatística Vital,EV,45,3,TRUE
+1108174,Teoria elementar da amostragem,Estatística Vital,EV,45,3,TRUE
+1108174,Intervalos de confiança,Estatística Vital,EV,45,3,TRUE
+1108174,Teses de Hipótese: testes considerando as distribuições normal t-Student e qui-quadrado,Estatística Vital,EV,45,3,TRUE
+1108174,Regressão linear: método dos mínimos quadrados,Estatística Vital,EV,45,3,TRUE
+1108174,"Correlação, correlação linear e coeficiente de correlação Linear",Estatística Vital,EV,45,3,TRUE
+1108174,Análise de variância (ANOVA): uma variável,Estatística Vital,EV,45,3,TRUE
+1108170,Conceitos Básicos de Probabilidade,Modelos Probabilísticos para a Computação,MPC,60,3,TRUE
+1108170,Probabilidade Condicional e Eventos Independentes,Modelos Probabilísticos para a Computação,MPC,60,3,TRUE
+1108170,Variáveis Aleatórias Unidimensionais,Modelos Probabilísticos para a Computação,MPC,60,3,TRUE
+1108170,Variáveis Aleatórias de duas ou mais dimensões,Modelos Probabilísticos para a Computação,MPC,60,3,TRUE
+1108170,Esperanças e momentos de variáveis aleatórias,Modelos Probabilísticos para a Computação,MPC,60,3,TRUE
+1108170,A Função Característica,Modelos Probabilísticos para a Computação,MPC,60,3,TRUE
+1108170,Funções de Variáveis Aleatórias,Modelos Probabilísticos para a Computação,MPC,60,3,TRUE
+1108170,Principais Distribuições de Probabilidade Discretas e Contínuas,Modelos Probabilísticos para a Computação,MPC,60,3,TRUE
+1108170,Noções de Amostragem,Modelos Probabilísticos para a Computação,MPC,60,3,TRUE
+1108170,Estimação e Testes de Hipóteses,Modelos Probabilísticos para a Computação,MPC,60,3,TRUE
+1108170,Regressão e Correlação,Modelos Probabilísticos para a Computação,MPC,60,3,TRUE
+1108170,Introdução aos Processos Estocásticos,Modelos Probabilísticos para a Computação,MPC,60,3,TRUE
