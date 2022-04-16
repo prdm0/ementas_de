@@ -1,19 +1,19 @@
 codigo,ementa,nome_disciplina,nome_abreviado,horas,creditos,servico
-1108110,Distribuição de frequência,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-1108110,Tabelas,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-1108110,Gráficos,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-1108110,Medidas de posição,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-1108110,Medidas de dispersão,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-1108110,Introdução à probabilidade,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-1108110,Esperança matemática,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-1108110,Distribuições discretas,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-1108110,Distribuições contínuas,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-1108110,Noções elementares de amostragem,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-1108110,Estimação pontual,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-1108110,Estimação intervalar,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-1108110,Testes de hipóteses,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-1108110,Regressão,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
-1108110,Correlação,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108100,Distribuição de frequência,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108100,Tabelas,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108100,Gráficos,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108100,Medidas de posição,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108100,Medidas de dispersão,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108100,Introdução à probabilidade,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108100,Esperança matemática,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108100,Distribuições discretas,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108100,Distribuições contínuas,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108100,Noções elementares de amostragem,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108100,Estimação pontual,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108100,Estimação intervalar,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108100,Testes de hipóteses,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108100,Regressão,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
+1108100,Correlação,Cálculo das Probabilidades e Estatística I,CPEI,60,4,TRUE
 GDEST0101,Tabelas,Bioestatística,BIO,60,4,TRUE
 GDEST0101,Gráficos,Bioestatística,BIO,60,4,TRUE
 GDEST0101,Medidas de posição,Bioestatística,BIO,60,4,TRUE
@@ -160,15 +160,45 @@ GDEST0103,Comparação de duas ou mais populações,Estatística para Ciências 
 1108174,Regressão linear: método dos mínimos quadrados,Estatística Vital,EV,45,3,TRUE
 1108174,"Correlação, correlação linear e coeficiente de correlação Linear",Estatística Vital,EV,45,3,TRUE
 1108174,Análise de variância (ANOVA): uma variável,Estatística Vital,EV,45,3,TRUE
-1108170,Conceitos Básicos de Probabilidade,Modelos Probabilísticos para a Computação,MPC,60,3,TRUE
-1108170,Probabilidade Condicional e Eventos Independentes,Modelos Probabilísticos para a Computação,MPC,60,3,TRUE
-1108170,Variáveis Aleatórias Unidimensionais,Modelos Probabilísticos para a Computação,MPC,60,3,TRUE
-1108170,Variáveis Aleatórias de duas ou mais dimensões,Modelos Probabilísticos para a Computação,MPC,60,3,TRUE
-1108170,Esperanças e momentos de variáveis aleatórias,Modelos Probabilísticos para a Computação,MPC,60,3,TRUE
-1108170,A Função Característica,Modelos Probabilísticos para a Computação,MPC,60,3,TRUE
-1108170,Funções de Variáveis Aleatórias,Modelos Probabilísticos para a Computação,MPC,60,3,TRUE
-1108170,Principais Distribuições de Probabilidade Discretas e Contínuas,Modelos Probabilísticos para a Computação,MPC,60,3,TRUE
-1108170,Noções de Amostragem,Modelos Probabilísticos para a Computação,MPC,60,3,TRUE
-1108170,Estimação e Testes de Hipóteses,Modelos Probabilísticos para a Computação,MPC,60,3,TRUE
-1108170,Regressão e Correlação,Modelos Probabilísticos para a Computação,MPC,60,3,TRUE
-1108170,Introdução aos Processos Estocásticos,Modelos Probabilísticos para a Computação,MPC,60,3,TRUE
+1108170,Conceitos básicos de probabilidade,Modelos Probabilísticos para a Computação,MPC,60,4,TRUE
+1108170,Probabilidade condicional e eventos independentes,Modelos Probabilísticos para a Computação,MPC,60,4,TRUE
+1108170,Variáveis aleatórias unidimensionais,Modelos Probabilísticos para a Computação,MPC,60,4,TRUE
+1108170,Variáveis Aleatórias de duas ou mais dimensões,Modelos Probabilísticos para a Computação,MPC,60,4,TRUE
+1108170,Esperanças e momentos de variáveis aleatórias,Modelos Probabilísticos para a Computação,MPC,60,4,TRUE
+1108170,Função característica,Modelos Probabilísticos para a Computação,MPC,60,4,TRUE
+1108170,Funções de variáveis aleatórias,Modelos Probabilísticos para a Computação,MPC,60,4,TRUE
+1108170,Principais distribuições de probabilidade discretas e contínuas,Modelos Probabilísticos para a Computação,MPC,60,4,TRUE
+1108170,Noções de amostragem,Modelos Probabilísticos para a Computação,MPC,60,4,TRUE
+1108170,Estimação e testes de hipóteses,Modelos Probabilísticos para a Computação,MPC,60,4,TRUE
+1108170,Regressão e correlação,Modelos Probabilísticos para a Computação,MPC,60,4,TRUE
+1108170,Introdução aos processos estocásticos,Modelos Probabilísticos para a Computação,MPC,60,4,TRUE
+1108109,Análise de dados estatísticos,Estatística Básica I,EBI,60,4,TRUE
+1108109,Medidas de tendência central ,Estatística Básica I,EBI,60,4,TRUE
+1108109,Medidas de variabilidade,Estatística Básica I,EBI,60,4,TRUE
+1108109,"Probabilidades: introdução, definição e probabilidade condicional",Estatística Básica I,EBI,60,4,TRUE
+1108109,Variáveis aleatórias unidimensionais: discretas e contínuas,Estatística Básica I,EBI,60,4,TRUE
+1108109,Função de probabilidade e função densidade de probabilidade,Estatística Básica I,EBI,60,4,TRUE
+1108109,"Esperança, variância e desvio padrão",Estatística Básica I,EBI,60,4,TRUE
+1108109,"Distribuições de probabilidade: binomial, Poisson, exponencial e normal",Estatística Básica I,EBI,60,4,TRUE
+1108108,Variáveis aleatórias: duas ou mais dimensões,Estatística Básica II,EBII,60,4,TRUE
+1108108,Distribuição de probabilidade marginal e condicionada,Estatística Básica II,EBII,60,4,TRUE
+1108108,Variáveis aleatórias independentes,Estatística Básica II,EBII,60,4,TRUE
+1108108,Covariância e coeficiente de variação de duas variáveis aleatórias,Estatística Básica II,EBII,60,4,TRUE
+1108108,Amostragem: amostragem casual simples e outros tipos de amostragem probabilística,Estatística Básica II,EBII,60,4,TRUE
+1108108,"Distribuições amostrais: para média, proporções, diferença entre duas médias e diferença entre duas proporções",Estatística Básica II,EBII,60,4,TRUE
+1108108,Estimação de Parâmetros,Estatística Básica II,EBII,60,4,TRUE
+1108108,"Intervalos de Confiança: para média, proporções, diferença, entre duas médias e diferença entre duas proporções",Estatística Básica II,EBII,60,4,TRUE
+1108108,"Teste de Hipótese: teste para média, proporções, diferença entre duas médias e diferença entre duas proporções",Estatística Básica II,EBII,60,4,TRUE
+1108108,Teste qui-quadrado para tabela de contingência,Estatística Básica II,EBII,60,4,TRUE
+1108108,Regressão: regressão linear por transformação,Estatística Básica II,EBII,60,4,TRUE
+1108108,Regressão polinomial,Estatística Básica II,EBII,60,4,TRUE
+1108108,Testes de hipóteses para coeficiente de correlação e regressão,Estatística Básica II,EBII,60,4,TRUE
+1108176,Introdução à Probabilidade,Estatística Aplicada à Administração,EAA,60,4,TRUE
+1108176,Probabilidade  condicional e independência,Estatística Aplicada à Administração,EAA,60,4,TRUE
+1108176,Distribuições de probabilidade: binomial e normal,Estatística Aplicada à Administração,EAA,60,4,TRUE
+1108176,Esperança matemática,Estatística Aplicada à Administração,EAA,60,4,TRUE
+1108176,Introdução à amostragem:  probabilística (amostra aleatória simples e outros tipos de amostra) e não probabilística,Estatística Aplicada à Administração,EAA,60,4,TRUE
+1108176,Distribuição amostral da média e da proporção,Estatística Aplicada à Administração,EAA,60,4,TRUE
+1108176,Estimação pontual: Intervalo de confiança para a média e proporção,Estatística Aplicada à Administração,EAA,60,4,TRUE
+1108176,Estimação intervalar,Estatística Aplicada à Administração,EAA,60,4,TRUE
+1108176,Teste de hipótese: testes para a média e proporção populacional,Estatística Aplicada à Administração,EAA,60,4,TRUE
