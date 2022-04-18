@@ -32,6 +32,7 @@ library(shinyTime)
 library(waiter)
 library(shinymanager)
 library(gmailr)
+library(shinyalert)
 source("R/codigo_tabela.R")
 source("R/parecer.R")
 source("R/email.R")
@@ -72,15 +73,15 @@ A qualificação do corpo docente do Departamento de Estatística tem aumentado 
 
 Dada esta trajetória, o Bacharelado em Estatística tem por compromisso formar competências intelectuais que reflitam a heterogeneidade das demandas sociais em relação a profissionais de alto nível, consoante à inovação presente no inciso II do artigo 43 da LDB.
 
-Nessa aplicação, você poderá ter acesso às lista de conteúdos das ementas das disciplinas fornecidas pelo DE.
+Nessa aplicação, você poderá ter acesso às listas de conteúdos das ementas de disciplinas fornecidas pelo DE.
 
 **Algumas observação**:
 
 1 - A aplicação ainda não contempla todas as ementas de todas as disciplinas fornecidas pelo DE;
 
-2 - Para acessar os PDF's das ementas do curso do bacharelado, consulte o site do departamento ou clique [**AQUI**](https://www.ufpb.br/de/contents/menu/bacharelado-em-estatistica/bacharelado-em-estatistica);
+2 - Para acessar os PDF's das ementas do curso do bacharelado, consulte o site do departamento clicando [**AQUI**](https://www.ufpb.br/de/contents/menu/bacharelado-em-estatistica/bacharelado-em-estatistica);
 
-3 - Para ter acesso às disciplinas de serviço, por favor, entre em contato com a Secretaria do DE.
+3 - Para ter acesso às disciplinas fornecidas pelo DE à outros cursos e que ainda não estejam cadastradas nessa aplicação, por favor, entre em contato com a Secretaria do DE.
 
 # Outros cursos {data-navmenu="Pesquisar ementa" data-icon="fa-book-open"}
 
@@ -150,7 +151,7 @@ tippy::with_tippy(
 
 ```{r}
 tippy::with_tippy(
-  selectInput("disciplinaDE", label = "Código da disiciplina:",
+  selectInput("disciplinaDE", label = "Encontre o código da disiciplina:",
           choices = c(paste("COD: (", disciplina_codigos(is_DT = FALSE)$Códigos, "), ", disciplina_codigos(is_DT = FALSE)$Disciplinas, sep = ""))),
   tooltip = 'Selecione o código da disciplina a ser dispensada. Se não souber o código, basta procurar nessa aplicação, na aba "Pesquisar ementas".'
 )
@@ -161,7 +162,7 @@ Colums {.tabset}
 #### Outras informações do curso anterior 
 ```{r}
 tippy::with_tippy(
-  textInput(inputId = "instituicaoAnteriorDE", label = "Intituição anterior:", value = ""),
+  textInput(inputId = "instituicaoAnteriorDE", label = "Instituição anterior:", value = ""),
   tooltip = "Intorme a disciplina cursada na instituição anterior."
 )
 
@@ -178,6 +179,15 @@ tippy::with_tippy(
 tippy::with_tippy(
   textInput(inputId = "anosCursadaDE", label = "Ano:", value = ""),
   tooltip = "Informe o ano em que o discente cursou a disciplina a ser utilizada no processo de dispensa. Poderá ser mais de um. Ex: ano 1, ano 2 e ano 3."
+)
+
+tippy::with_tippy(
+  materialSwitch(
+     inputId = "emailDE",
+     label = "Enviar Email",
+     value = FALSE
+  ),
+  tooltip = "O email será enviado para comissao.dispensa.estatistica@gmail.com."
 )
 
 output$downloadDE <- downloadHandler(
@@ -198,6 +208,33 @@ output$downloadDE <- downloadHandler(
       ),
       envir = new.env(parent = globalenv())
     )
+    
+    file.copy(file, to = "parecer/enviar_email/despacho_deferido.pdf", overwrite = TRUE)
+
+    if(isTRUE(input$emailDE)){
+      send_email(
+        nome = input$nomeDE,
+        matricula = input$matriculaDE,
+        tipo = "DE"
+      )
+    }
+    
+    shinyalert(
+      title = "Procedimento finalizado com sucesso",
+      text = 'Se a opção de "Enviar Email" estiver ativa, é uma boa prática verificar se o despacho foi recebido no email. De toda forma,                 salve o PDF em um lugar seguro.',
+      size = "s", 
+      closeOnEsc = TRUE,
+      closeOnClickOutside = FALSE,
+      html = FALSE,
+      type = "success",
+      showConfirmButton = TRUE,
+      showCancelButton = FALSE,
+      confirmButtonText = "OK",
+      confirmButtonCol = "#AEDEF4",
+      timer = 0,
+      imageUrl = "",
+      animation = TRUE
+  )
   }
 )
 
@@ -235,7 +272,7 @@ tippy::with_tippy(
 
 ```{r}
 tippy::with_tippy(
-  selectInput("disciplinaIND", label = "Código da disiciplina:",
+  selectInput("disciplinaIND", label = "Encontre o código da disiciplina:",
           choices = c(paste("COD: (", disciplina_codigos(is_DT = FALSE)$Códigos, "), ", disciplina_codigos(is_DT = FALSE)$Disciplinas, sep = ""))),
   tooltip = 'Selecione o código da disciplina solicitada para a dispensa pelo discente. Se não souber o código, basta procurar nessa aplicação, na aba "Pesquisar ementas".'
 )
@@ -246,7 +283,7 @@ Colums {.tabset}
 #### Outras informações do curso anterior 
 ```{r}
 tippy::with_tippy(
-  textInput(inputId = "instituicaoAnteriorIND", label = "Intituição anterior:", value = ""),
+  textInput(inputId = "instituicaoAnteriorIND", label = "Instituição anterior:", value = ""),
   tooltip = "Intorme a disciplina cursada na instituição anterior."
 )
 
@@ -263,6 +300,15 @@ tippy::with_tippy(
 tippy::with_tippy(
   textInput(inputId = "anosCursadaIND", label = "Ano:", value = ""),
   tooltip = "Informe o ano em que o discente cursou a disciplina a ser utilizada no processo de dispensa. Poderá ser mais de um. Ex: ano 1, ano 2 e ano 3."
+)
+
+tippy::with_tippy(
+  materialSwitch(
+     inputId = "emailIND",
+     label = "Enviar Email",
+      value = FALSE
+  ),
+  tooltip = "O email será enviado para comissao.dispensa.estatistica@gmail.com."
 )
 
 output$downloadIND <- downloadHandler(
@@ -283,6 +329,32 @@ output$downloadIND <- downloadHandler(
       ),
       envir = new.env(parent = globalenv())
     )
+    
+    file.copy(file, to = "parecer/enviar_email/despacho_indeferido.pdf", overwrite = TRUE)
+
+    if(isTRUE(input$emailIND)){
+      send_email(
+        nome = input$nomeIND,
+        matricula = input$matriculaIND,
+        tipo = "IND"
+      )
+    }
+    shinyalert(
+      title = "Procedimento finalizado com sucesso",
+      text = 'Se a opção de "Enviar Email" estiver ativa, é uma boa prática verificar se o despacho foi recebido no email. De toda forma,                 salve o PDF em um lugar seguro.',
+      size = "s", 
+      closeOnEsc = TRUE,
+      closeOnClickOutside = FALSE,
+      html = FALSE,
+      type = "success",
+      showConfirmButton = TRUE,
+      showCancelButton = FALSE,
+      confirmButtonText = "OK",
+      confirmButtonCol = "#AEDEF4",
+      timer = 0,
+      imageUrl = "",
+      animation = TRUE
+  )
   }
 )
 renderUI({
@@ -308,6 +380,15 @@ tippy::with_tippy(
 ```
 
 ```{r}
+tippy::with_tippy(
+  materialSwitch(
+     inputId = "emailDESP",
+     label = "Enviar Email",
+      value = FALSE
+  ),
+  tooltip = "O email será enviado para comissao.dispensa.estatistica@gmail.com."
+)
+
 output$downloadREDIGIR <- downloadHandler(
   filename = "parecer.pdf",
   content = function(file) {
@@ -319,6 +400,30 @@ output$downloadREDIGIR <- downloadHandler(
       ),
       envir = new.env(parent = globalenv())
     )
+    
+    file.copy(file, to = "parecer/enviar_email/despacho.pdf", overwrite = TRUE)
+
+    if(isTRUE(input$emailDESP)){
+      send_email(
+        tipo = "DESP"
+      )
+    }
+    shinyalert(
+      title = "Procedimento finalizado com sucesso",
+      text = 'Se a opção de "Enviar Email" estiver ativa, é uma boa prática verificar se o despacho foi recebido no email. De toda forma,                 salve o PDF em um lugar seguro.',
+      size = "s", 
+      closeOnEsc = TRUE,
+      closeOnClickOutside = FALSE,
+      html = FALSE,
+      type = "success",
+      showConfirmButton = TRUE,
+      showCancelButton = FALSE,
+      confirmButtonText = "OK",
+      confirmButtonCol = "#AEDEF4",
+      timer = 0,
+      imageUrl = "",
+      animation = TRUE
+  )
   }
 )
 
@@ -361,7 +466,7 @@ tippy::with_tippy(
 #### Outras informações do curso anterior 
 ```{r}
 tippy::with_tippy(
-  textInput(inputId = "instituicaoAnteriorCOMP", label = "Intituição anterior:", value = ""),
+  textInput(inputId = "instituicaoAnteriorCOMP", label = "Instituição anterior:", value = ""),
   tooltip = "Informe a instituição anterior do discente."
 )
 
@@ -428,13 +533,14 @@ tippy::with_tippy(
 )
 ```
 
-#### Deseja enviar um email ao fazer download do despacho?
-
 ```{r}
-materialSwitch(
-   inputId = "emailCOMP",
-   label = "Enviar Email",
-    value = TRUE
+tippy::with_tippy(
+  materialSwitch(
+      inputId = "emailCOMP",
+      label = "Enviar Email",
+      value = TRUE
+  ), 
+  tooltip = "O email será eviado para comissao.dispensa.estatistica@gmail.com."
 )
 
 output$downloadCOMP <- downloadHandler(
@@ -472,6 +578,23 @@ output$downloadCOMP <- downloadHandler(
         hora = input$horaCOMP
       )
     }
+    
+    shinyalert(
+      title = "Procedimento finalizado com sucesso",
+      text = 'Se a opção de "Enviar Email" estiver ativa, é uma boa prática verificar se o despacho foi recebido no email. De toda forma,                 salve o PDF em um lugar seguro.',
+      size = "s", 
+      closeOnEsc = TRUE,
+      closeOnClickOutside = FALSE,
+      html = FALSE,
+      type = "success",
+      showConfirmButton = TRUE,
+      showCancelButton = FALSE,
+      confirmButtonText = "OK",
+      confirmButtonCol = "#AEDEF4",
+      timer = 0,
+      imageUrl = "",
+      animation = TRUE
+  )
   }
 )
 
