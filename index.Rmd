@@ -20,6 +20,7 @@ runtime: shiny
 
 ```{r setup, include=FALSE}
 options(shiny.autoreload = TRUE)
+options(gargle_oob_default = TRUE)
 library(flexdashboard)
 library(shiny)
 library(dplyr)
@@ -30,8 +31,10 @@ library(shinyWidgets)
 library(shinyTime)
 library(waiter)
 library(shinymanager)
+library(gmailr)
 source("R/codigo_tabela.R")
 source("R/parecer.R")
+source("R/email.R")
 ```
 
 # Sobre {data-icon="fa-home"}
@@ -423,10 +426,16 @@ tippy::with_tippy(
   textAreaInput("assuntosCOMP", "Assuntos:", "", width = "500px", height = "200px"),
   tooltip = "Com base na ementa listada acima, enumere nessa caixa de texto os assuntos que o discente deverá estudar para a prova de complementação. (Dica: deixe uma linha em branco entre cada assunto)"
 )
+```
 
+#### Deseja enviar um email ao fazer download do despacho?
 
-# checkboxGroupInput("checkCOMP", label = "",
-#      choices = (as.vereactivector(unlist(select(filter(disciplinas_servico, Código == renderText({e()})))))))
+```{r}
+materialSwitch(
+   inputId = "emailCOMP",
+   label = "Enviar Email",
+    value = TRUE
+)
 
 output$downloadCOMP <- downloadHandler(
   filename = "despacho_complementacao.pdf",
@@ -450,8 +459,23 @@ output$downloadCOMP <- downloadHandler(
       ),
       envir = new.env(parent = globalenv())
     )
+    
+      
+    file.copy(file, to = "parecer/enviar_email/despacho_complementacao.pdf", overwrite = TRUE)
+
+    if(isTRUE(input$emailCOMP)){
+      send_email(
+        nome = input$nomeCOMP,
+        matricula = input$matriculaCOMP,
+        data = input$dataCOMP,
+        local = input$localCOMP,
+        hora = input$horaCOMP
+      )
+    }
   }
 )
+
+#send_email("pedro", "23", "21234", hora = "23", local = "Sala 20 - DE")
 
 renderUI({
   downloadButton("downloadCOMP", "Baixe o PDF do despacho", style = "width:30%;")

@@ -11,19 +11,6 @@ closing: Com os melhores cumprimentos,
 signature: A comissão.
 date: "`r format(Sys.Date(), '%d/%m/%Y')`"
 output: komaletter::komaletter
-params: 
-  nome: ""
-  matricula: ""
-  curso_atual: ""
-  disciplina_cursada: ""
-  instituicao_antiga: ""
-  anos_cursados: ""
-  curso_anterior: ""
-  disciplina: ""
 ---
   
-No  presente processo, o(a) aluno(a) `r params$nome`, matrícula Nº `r params$matricula`, do curso de `r pramas$curso_atual`, solicita o aproveitamento da disciplina `r params$disciplina_cursada`, cursada no `r params$istituicao_antiga`, em `r params$anos_cursados`, considerando a equivalência com a disciplina `r params$disciplina`, deste departamento.
-
-Analisando-se o conteúdo programático e carga horária das disciplinas, verificou-se que há identidade do conteúdo, porém a carga horária é inferior. Sendo assim, conforme instrui o Art. 232, inciso VI, da resolução  N. 16/2015  do CONSEPE, sou favorável ao aproveitamento de estudos computando-se a carga horária efetivamente cursada, sem prejuízo da integralização do total de horas-aula fixado para o respectivo Curso.
-
-A comissão de dispensa de disciplina do Departamento de Estatística encaminha o processo para Secretaria do Departamento de Estatística, para providências cabíveis.
+No  presente processo, 
