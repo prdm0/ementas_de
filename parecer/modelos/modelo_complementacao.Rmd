@@ -8,7 +8,7 @@ address:
   - Departamento de Estatística - DE, CCEN, UFPB
 subject: SOLICITAÇÃO DE DISPENSA DE DISCIPLINA
 closing: Com os melhores cumprimentos,
-signature: A comissão.
+signature: A Comissão.
 date: "`r format(Sys.Date(), '%d/%m/%Y')`"
 output: komaletter::komaletter
 params: 
@@ -26,9 +26,9 @@ params:
   local: ""
 ---
   
-No presente processo, o(a) aluno(a) `r params$nome`, matrícula Nº `r params$matricula`, do curso de `r params$curso_atual`, solicita o aproveitamento da disciplina `r params$disciplina_cursada`, cursadas no(a) `r params$instituicao_antiga`, em `r params$anos_cursados`, considerando a equivalência com a disciplina `r params$disciplina`, deste departamento.
+No presente processo, o(a) aluno(a) `r toupper(params$nome)`, matrícula Nº `r toupper(params$matricula)`, do curso de `r toupper(params$curso_atual)`, solicita o aproveitamento da disciplina `r toupper(params$disciplina_cursada)`, cursadas no(a) `r toupper(params$instituicao_antiga)`, em `r toupper(params$anos_cursados)`, considerando a equivalência com a disciplina `r toupper(params$disciplina)`, deste departamento.
 
-Analisando-se o conteúdo programático dos componentes curriculares cursados, verificou-se que os conteúdos programáticos das referidas disciplinas **É INFERIOR** ao exigido pela disciplina `r params$disciplina`. Sendo assim, segundo a resolução Nº 29/2020, Art. 42, inciso V, do CONSEPE, será necessária realizar a prova de **COMPLEMENTAÇÃO** do conteúdo, desde que esse processo retorne ao Departamento de Estatística no prazo máximo de dez (10) dias úteis antes da data de realização da prova.
+Analisando-se o conteúdo programático dos componentes curriculares cursados, verificou-se que os conteúdos programáticos das referidas disciplinas **É INFERIOR** ao exigido pela disciplina `r toupper(params$disciplina)`. Sendo assim, segundo a resolução Nº 29/2020, Art. 42, inciso V, do CONSEPE, será necessária realizar a prova de **COMPLEMENTAÇÃO** do conteúdo, desde que esse processo retorne ao Departamento de Estatística no prazo máximo de dez (10) dias úteis antes da data de realização da prova.
 
 **Conteúdos da prova de complementação**:
 

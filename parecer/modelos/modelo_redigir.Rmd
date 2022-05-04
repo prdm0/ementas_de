@@ -8,7 +8,7 @@ address:
   - Departamento de Estatística - DE, CCEN, UFPB
 subject: SOLICITAÇÃO DE DISPENSA DE DISCIPLINA
 closing: Com os melhores cumprimentos,
-signature: A comissão.
+signature: A Comissão.
 date: "`r format(Sys.Date(), '%d/%m/%Y')`"
 output: komaletter::komaletter
 params: 

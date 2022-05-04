@@ -202,3 +202,84 @@ GDEST0103,Comparação de duas ou mais populações,Estatística para Ciências 
 1108176,Estimação pontual: Intervalo de confiança para a média e proporção,Estatística Aplicada à Administração,EAA,60,4,TRUE
 1108176,Estimação intervalar,Estatística Aplicada à Administração,EAA,60,4,TRUE
 1108176,Teste de hipótese: testes para a média e proporção populacional,Estatística Aplicada à Administração,EAA,60,4,TRUE
+1108103,Análise de dados estatísticos: estatística descritiva,Estatística para Ciências Sociais I,ECSI,60,4,TRUE
+1108103,"Noções de probabilidade: experimento aleatório, população, eventos, probabilidade condicional e eventos independentes",Estatística para Ciências Sociais I,ECSI,60,4,TRUE
+1108103,"Variáveis aleatória: variáveis aleatórias unidimensionais, função e distribuição de probabilidade de uma variável aleatória",Estatística para Ciências Sociais I,ECSI,60,4,TRUE
+1108103,"Esperança matemática, variância e desvio padrão de várias aleatórias e propriedades",Estatística para Ciências Sociais I,ECSI,60,4,TRUE
+1108103,Distribuições de probabilidade: binomial e normal,Estatística para Ciências Sociais I,ECSI,60,4,TRUE
+1108103,"Teoria de amostragem: tipos de Amostras, não paramétricas e probabilística (amostra aleatória simples e outros tipos de
+Amostra)",Estatística para Ciências Sociais I,ECSI,60,4,TRUE
+1108103,Estimativa de parâmetro: estimação pontual,Estatística para Ciências Sociais I,ECSI,60,4,TRUE
+1108103,Intervalo de confiança para a média e proporção populacional,Estatística para Ciências Sociais I,ECSI,60,4,TRUE
+1108103,Testes de hipótese para a média e proporção populacional;,Estatística para Ciências Sociais I,ECSI,60,4,TRUE
+1108103,Correlação,Estatística para Ciências Sociais I,ECSI,60,4,TRUE
+1108103,Regressão linear simples,Estatística para Ciências Sociais I,ECSI,60,4,TRUE
+1108103,Teste de hipóteses para os coeficientes de correlação e regressão,Estatística para Ciências Sociais I,ECSI,60,4,TRUE
+1108110,Introdução às Ideias do Método Estatístico,Estatística Econômica I,EEI,60,4,TRUE
+1108110,Fases do trabalho estatístico,Estatística Econômica I,EEI,60,4,TRUE
+1108110,Números índices,Estatística Econômica I,EEI,60,4,TRUE
+1108110,Estatística descritiva: medidas de posição e dispersão,Estatística Econômica I,EEI,60,4,TRUE
+1108110,"Caracterização do evento aleatório, espaço amostral e eventos;",Estatística Econômica I,EEI,60,4,TRUE
+1108110,Independência de eventos,Estatística Econômica I,EEI,60,4,TRUE
+1108110,"Introdução à probabilidade: definições, probabilidade condicional, teorema da probabilidade total, teorema do produto e teorema de Bayes ",Estatística Econômica I,EEI,60,4,TRUE
+1108110,Variáveis aleatórias discretas e contínuas,Estatística Econômica I,EEI,60,4,TRUE
+1108110,Função de probabilidade e função densidade de probabilidade,Estatística Econômica I,EEI,60,4,TRUE
+1108110,"Esperança matemática, variância, desvio padrão e suas propriedades;",Estatística Econômica I,EEI,60,4,TRUE
+1108110,"Distribuições de probabilidades: bernoulli, binomial, Poisson e exponencial",Estatística Econômica I,EEI,60,4,TRUE
+1108111,"Introdução à Amostragem: amostragem casual simples, estratificada, por conglomerados e amostragem dupla",Estatística Econômica II,EEII,60,4,TRUE
+1108111,"Distribuições amostrais: para a média, proporção, diferença de duas médias e diferença de duas proporções",Estatística Econômica II,EEII,60,4,TRUE
+1108111,Estimação de parâmetros;,Estatística Econômica II,EEII,60,4,TRUE
+1108111,Definição de estimador e estimativa,Estatística Econômica II,EEII,60,4,TRUE
+1108111,Estimativa pontual,Estatística Econômica II,EEII,60,4,TRUE
+1108111,"Intervalo de confiança: para média, para proporção, para diferença de duas médias e diferença de duas proporções",Estatística Econômica II,EEII,60,4,TRUE
+1108111,"Testes de Hipóteses: para média, proporção e diferença de médias e proporções",Estatística Econômica II,EEII,60,4,TRUE
+1108111,Teste F para razão de variância,Estatística Econômica II,EEII,60,4,TRUE
+1108111,Teste qui-quadrado para tabela de contingência,Estatística Econômica II,EEII,60,4,TRUE
+1108111,Análise de variância (ANOVA),Estatística Econômica II,EEII,60,4,TRUE
+1108111,Regressão,Estatística Econômica II,EEII,60,4,TRUE
+1108111,Correlação,Estatística Econômica II,EEII,60,4,TRUE
+1108112,"Análise de dados estatísticos: concetos de população, amostra, coleta, organização e apresentação de dados",Estatística I,EI,60,4,TRUE
+1108112,"Medidas de tendência central: mediana, moda e separatrizes ",Estatística I,EI,60,4,TRUE
+1108112,"Medidas de variabilidade: variância, desvio padrão, coeficiente de variação, assimetria e curtose",Estatística I,EI,60,4,TRUE
+1108112,"Números índices: teste de adequação da fórmula de um índice: identidade, reversão e circular",Estatística I,EI,60,4,TRUE
+1108112,Índices agregativos ponderados: Laspeyre e Fischer,Estatística I,EI,60,4,TRUE
+1108112,"Probabilidades: introdução, definição, independência e probabilidade condicional",Estatística I,EI,60,4,TRUE
+1108112,Variáveis aleatórias discretas e contínuas,Estatística I,EI,60,4,TRUE
+1108112,Função de probabilidade e função densidade de probabilidade,Estatística I,EI,60,4,TRUE
+1108112,"Esperança, variância, desvio padrão e propriedades",Estatística I,EI,60,4,TRUE
+1108112,"Distribuições de probabilidades: bernoulli, binomial, Poisson e exponencial",Estatística I,EI,60,4,TRUE
+1108184,A estatística e a análise de dados,Estatística para Gestão Pública,EGP,60,4,TRUE
+1108184,Distribuição de frequências: tabelas e gráficos,Estatística para Gestão Pública,EGP,60,4,TRUE
+1108184,Medidas de posição,Estatística para Gestão Pública,EGP,60,4,TRUE
+1108184,Medidas de dispersão,Estatística para Gestão Pública,EGP,60,4,TRUE
+1108184,Introdução à Probabilidade,Estatística para Gestão Pública,EGP,60,4,TRUE
+1108184,Variáveis aleatórias: discreta e contínua,Estatística para Gestão Pública,EGP,60,4,TRUE
+1108184,Esperança matemática,Estatística para Gestão Pública,EGP,60,4,TRUE
+1108184,"Distribuições discretas: Bernoulli, binomial e Poisson",Estatística para Gestão Pública,EGP,60,4,TRUE
+1108184,Distribuição contínua: normal (uso de tabela de cálculo),Estatística para Gestão Pública,EGP,60,4,TRUE
+1108184,Noções elementares de amostragem,Estatística para Gestão Pública,EGP,60,4,TRUE
+1108210,Importância da Estatística para á pesquisa,Estatística Aplicada à Comunicação,EAC,60,4,TRUE
+1108210,Dados estatísticos,Estatística Aplicada à Comunicação,EAC,60,4,TRUE
+1108210,Variáveis e níveis de mensuração,Estatística Aplicada à Comunicação,EAC,60,4,TRUE
+1108210,População e amostra,Estatística Aplicada à Comunicação,EAC,60,4,TRUE
+1108210,Parâmetros e estimativas,Estatística Aplicada à Comunicação,EAC,60,4,TRUE
+1108210,Pesquisa por censo ou amostragem,Estatística Aplicada à Comunicação,EAC,60,4,TRUE
+1108210,Banco de dados,Estatística Aplicada à Comunicação,EAC,60,4,TRUE
+1108210,Tabelas de frequências e gráficos,Estatística Aplicada à Comunicação,EAC,60,4,TRUE
+1108210,Planejamento amostral,Estatística Aplicada à Comunicação,EAC,60,4,TRUE
+1108210,Medidas estatísticas: tendência central e variabilidade,Estatística Aplicada à Comunicação,EAC,60,4,TRUE
+1108210,Noções de correlação e regressão,Estatística Aplicada à Comunicação,EAC,60,4,TRUE
+1108210,O questionário como instrumento de coleta de dados,Estatística Aplicada à Comunicação,EAC,60,4,TRUE
+1108210,Uso de pacotes (softwares) na análise de dados,Estatística Aplicada à Comunicação,EAC,60,4,TRUE
+1108185,Análise de dados estatísticos,Introdução à Estatística,IE,60,4,TRUE
+1108185,Medidas de tendência central,Introdução à Estatística,IE,60,4,TRUE
+1108185,Medidas de variação,Introdução à Estatística,IE,60,4,TRUE
+1108185,Variável aleatória discreta: distribuição binomial,Introdução à Estatística,IE,60,4,TRUE
+1108185,Variável aleatória contínua: distribuição normal,Introdução à Estatística,IE,60,4,TRUE
+1108185,Introdução a amostragem e ao delineamento experimental,Introdução à Estatística,IE,60,4,TRUE
+1108185,Distribuição amostral da média e proporção,Introdução à Estatística,IE,60,4,TRUE
+1108185,Intervalo de confiança para média e proporção,Introdução à Estatística,IE,60,4,TRUE
+1108185,Testes de hipóteses para média e proporção,Introdução à Estatística,IE,60,4,TRUE
+1108185,Regressão linear simples,Introdução à Estatística,IE,60,4,TRUE
+1108185,Análise de variância (ANOVA),Introdução à Estatística,IE,60,4,TRUE
+1108185,Introdução ao controle estatístico de processos,Introdução à Estatística,IE,60,4,TRUE

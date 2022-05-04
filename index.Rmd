@@ -33,12 +33,17 @@ library(waiter)
 library(shinymanager)
 library(gmailr)
 library(shinyalert)
+library(shinycssloaders)
+library(glue)
+library(shinyauthr)
 source("R/codigo_tabela.R")
 source("R/parecer.R")
 source("R/email.R")
+unlink(x = "parecer/enviar_email/*", recursive = TRUE)
 ```
 
 # Sobre {data-icon="fa-home"}
+
 ```{r}
     modalDialog(
       title = NULL,
@@ -162,67 +167,86 @@ Colums {.tabset}
 #### Outras informações do curso anterior 
 ```{r}
 tippy::with_tippy(
-  textInput(inputId = "instituicaoAnteriorDE", label = "Instituição anterior:", value = ""),
+  textInput(
+    inputId = "instituicaoAnteriorDE",
+    label = "Instituição anterior:",
+    value = ""
+  ),
   tooltip = "Intorme a disciplina cursada na instituição anterior."
 )
 
-tippy::with_tippy(
-  textInput(inputId = "cursoAntigo", label = "Curso anterior:", value = ""),
-  tooltip = "Informe o curso anterior onde o discente cursou a disciplina a ser utilizada no processo de dispensa."
-)
+tippy::with_tippy(textInput(
+  inputId = "cursoAntigo",
+  label = "Curso anterior:",
+  value = ""
+),
+tooltip = "Informe o curso anterior onde o discente cursou a disciplina a ser utilizada no processo de dispensa.")
 
 tippy::with_tippy(
-  textInput(inputId = "disciplinaCursadaDE", label = "Disciplina cursada:", value = ""),
+  textInput(
+    inputId = "disciplinaCursadaDE",
+    label = "Disciplina cursada:",
+    value = ""
+  ),
   tooltip = "Informe a disciplina cursada na instituição anterior. Poderá ser mais de uma. Ex: disciplina 1, disciplina 2 e disciplina 3."
 )
 
-tippy::with_tippy(
-  textInput(inputId = "anosCursadaDE", label = "Ano:", value = ""),
-  tooltip = "Informe o ano em que o discente cursou a disciplina a ser utilizada no processo de dispensa. Poderá ser mais de um. Ex: ano 1, ano 2 e ano 3."
-)
+tippy::with_tippy(textInput(
+  inputId = "anosCursadaDE",
+  label = "Ano:",
+  value = ""
+),
+tooltip = "Informe o ano em que o discente cursou a disciplina a ser utilizada no processo de dispensa. Poderá ser mais de um. Ex: ano 1, ano 2 e ano 3.")
 
-tippy::with_tippy(
-  materialSwitch(
-     inputId = "emailDE",
-     label = "Enviar Email",
-     value = FALSE
-  ),
-  tooltip = "O email será enviado para comissao.dispensa.estatistica@gmail.com."
-)
+tippy::with_tippy(materialSwitch(
+  inputId = "emailDE",
+  label = "Enviar Email",
+  value = FALSE
+),
+tooltip = "O email será enviado para comissao.dispensa.estatistica@gmail.com.")
 
 output$downloadDE <- downloadHandler(
-  filename = "despacho_final_deferido.pdf",
+  filename = function(){
+      glue("despacho_deferido_{input$nomeDE}_{input$matriculaDE}.pdf")
+  },
   content = function(file) {
-    rmarkdown::render(
-      "parecer/modelos/modelo_deferido.Rmd",
-      output_file = file,
-      params = list(
-        nome = input$nomeDE,
-        matricula = input$matriculaDE,
-        curso_atual = input$cursoAtualDE,
-        disciplina_cursada = input$disciplinaCursadaDE,
-        instituicao_antiga = input$instituicaoAnteriorDE,
-        anos_cursados = input$anosCursadaDE,
-        curso_anterior = input$cursoAntigo,
-        disciplina = input$disciplinaDE
-      ),
-      envir = new.env(parent = globalenv())
-    )
-    
-    file.copy(file, to = "parecer/enviar_email/despacho_deferido.pdf", overwrite = TRUE)
-
-    if(isTRUE(input$emailDE)){
-      send_email(
-        nome = input$nomeDE,
-        matricula = input$matriculaDE,
-        tipo = "DE"
-      )
-    }
+    shiny::withProgress(message = paste0("Aguarde um pouco ..."),
+                        value = 0,
+                        {
+                          shiny::incProgress(1 / 10)
+                          Sys.sleep(1)
+                          shiny::incProgress(5 / 10)
+                          rmarkdown::render(
+                            "parecer/modelos/modelo_deferido.Rmd",
+                            output_file = file,
+                            params = list(
+                              nome = input$nomeDE,
+                              matricula = input$matriculaDE,
+                              curso_atual = input$cursoAtualDE,
+                              disciplina_cursada = input$disciplinaCursadaDE,
+                              instituicao_antiga = input$instituicaoAnteriorDE,
+                              anos_cursados = input$anosCursadaDE,
+                              curso_anterior = input$cursoAntigo,
+                              disciplina = input$disciplinaDE
+                            ),
+                            envir = new.env(parent = globalenv())
+                          )
+                          
+                          file.copy(file, to = glue("parecer/enviar_email/despacho_deferido_{input$nomeDE}_{input$matriculaDE}.pdf"))
+                          
+                          if (isTRUE(input$emailDE)) {
+                            send_email(
+                              nome = input$nomeDE,
+                              matricula = input$matriculaDE,
+                              tipo = "DE"
+                            )
+                          }
+                        })
     
     shinyalert(
       title = "Procedimento finalizado com sucesso",
       text = 'Se a opção de "Enviar Email" estiver ativa, é uma boa prática verificar se o despacho foi recebido no email. De toda forma,                 salve o PDF em um lugar seguro.',
-      size = "s", 
+      size = "s",
       closeOnEsc = TRUE,
       closeOnClickOutside = FALSE,
       html = FALSE,
@@ -230,11 +254,13 @@ output$downloadDE <- downloadHandler(
       showConfirmButton = TRUE,
       showCancelButton = FALSE,
       confirmButtonText = "OK",
-      confirmButtonCol = "#AEDEF4",
+      confirmButtonCol ="#2b3d4f",
       timer = 0,
       imageUrl = "",
       animation = TRUE
-  )
+    )
+    
+    #unlink(x = "parecer/enviar_email/*")
   }
 )
 
@@ -283,66 +309,86 @@ Colums {.tabset}
 #### Outras informações do curso anterior 
 ```{r}
 tippy::with_tippy(
-  textInput(inputId = "instituicaoAnteriorIND", label = "Instituição anterior:", value = ""),
+  textInput(
+    inputId = "instituicaoAnteriorIND",
+    label = "Instituição anterior:",
+    value = ""
+  ),
   tooltip = "Intorme a disciplina cursada na instituição anterior."
 )
 
-tippy::with_tippy(
-  textInput(inputId = "cursoAntigoIND", label = "Curso anterior:", value = ""),
-  tooltip = "Informe o curso anterior onde o discente cursou a disciplina a ser utilizada no processo de dispensa."
-)
+tippy::with_tippy(textInput(
+  inputId = "cursoAntigoIND",
+  label = "Curso anterior:",
+  value = ""
+),
+tooltip = "Informe o curso anterior onde o discente cursou a disciplina a ser utilizada no processo de dispensa.")
 
 tippy::with_tippy(
-  textInput(inputId = "disciplinaCursadaIND", label = "Disciplina cursada:", value = ""),
+  textInput(
+    inputId = "disciplinaCursadaIND",
+    label = "Disciplina cursada:",
+    value = ""
+  ),
   tooltip = "Informe a disciplina cursada na instituição anterior. Poderá ser mais de uma. Ex: disciplina 1, disciplina 2 e disciplina 3."
 )
 
-tippy::with_tippy(
-  textInput(inputId = "anosCursadaIND", label = "Ano:", value = ""),
-  tooltip = "Informe o ano em que o discente cursou a disciplina a ser utilizada no processo de dispensa. Poderá ser mais de um. Ex: ano 1, ano 2 e ano 3."
-)
+tippy::with_tippy(textInput(
+  inputId = "anosCursadaIND",
+  label = "Ano:",
+  value = ""
+),
+tooltip = "Informe o ano em que o discente cursou a disciplina a ser utilizada no processo de dispensa. Poderá ser mais de um. Ex: ano 1, ano 2 e ano 3.")
 
-tippy::with_tippy(
-  materialSwitch(
-     inputId = "emailIND",
-     label = "Enviar Email",
-      value = FALSE
-  ),
-  tooltip = "O email será enviado para comissao.dispensa.estatistica@gmail.com."
-)
+tippy::with_tippy(materialSwitch(
+  inputId = "emailIND",
+  label = "Enviar Email",
+  value = FALSE
+),
+tooltip = "O email será enviado para comissao.dispensa.estatistica@gmail.com.")
 
 output$downloadIND <- downloadHandler(
-  filename = "despacho_final_indeferido.pdf",
+  filename = function(){
+      glue("despacho_indeferido_{input$nomeIND}_{input$matriculaIND}.pdf")
+  },
   content = function(file) {
-    rmarkdown::render(
-      "parecer/modelos/modelo_indeferido.Rmd",
-      output_file = file,
-      params = list(
-        nome = input$nomeIND,
-        matricula = input$matriculaIND,
-        curso_atual = input$cursoAtualIND,
-        disciplina_cursada = input$disciplinaCursadaIND,
-        instituicao_antiga = input$instituicaoAnteriorIND,
-        anos_cursados = input$anosCursadaIND,
-        curso_anterior = input$cursoAntigoIND,
-        disciplina = input$disciplinaIND
-      ),
-      envir = new.env(parent = globalenv())
-    )
+    shiny::withProgress(message = paste0("Aguarde um pouco ..."),
+                        value = 0,
+                        {
+                          shiny::incProgress(1 / 10)
+                          Sys.sleep(1)
+                          shiny::incProgress(5 / 10)
+                          rmarkdown::render(
+                            "parecer/modelos/modelo_indeferido.Rmd",
+                            output_file = file,
+                            params = list(
+                              nome = input$nomeIND,
+                              matricula = input$matriculaIND,
+                              curso_atual = input$cursoAtualIND,
+                              disciplina_cursada = input$disciplinaCursadaIND,
+                              instituicao_antiga = input$instituicaoAnteriorIND,
+                              anos_cursados = input$anosCursadaIND,
+                              curso_anterior = input$cursoAntigoIND,
+                              disciplina = input$disciplinaIND
+                            ),
+                            envir = new.env(parent = globalenv())
+                          )
+                          
+                          file.copy(file, to = glue("parecer/enviar_email/despacho_indeferido_{input$nomeIND}_{input$matriculaIND}.pdf"))
+                          
+                          if (isTRUE(input$emailIND)) {
+                            send_email(
+                              nome = input$nomeIND,
+                              matricula = input$matriculaIND,
+                              tipo = "IND"
+                            )
+                          }
+                        })
     
-    file.copy(file, to = "parecer/enviar_email/despacho_indeferido.pdf", overwrite = TRUE)
-
-    if(isTRUE(input$emailIND)){
-      send_email(
-        nome = input$nomeIND,
-        matricula = input$matriculaIND,
-        tipo = "IND"
-      )
-    }
     shinyalert(
       title = "Procedimento finalizado com sucesso",
       text = 'Se a opção de "Enviar Email" estiver ativa, é uma boa prática verificar se o despacho foi recebido no email. De toda forma,                 salve o PDF em um lugar seguro.',
-      size = "s", 
+      size = "s",
       closeOnEsc = TRUE,
       closeOnClickOutside = FALSE,
       html = FALSE,
@@ -350,18 +396,17 @@ output$downloadIND <- downloadHandler(
       showConfirmButton = TRUE,
       showCancelButton = FALSE,
       confirmButtonText = "OK",
-      confirmButtonCol = "#AEDEF4",
+      confirmButtonCol ="#2b3d4f",
       timer = 0,
       imageUrl = "",
       animation = TRUE
-  )
+    )
+    #unlink(x = "parecer/enviar_email/*")
   }
 )
 renderUI({
   downloadButton("downloadIND", "Baixe o PDF do despacho", style = "width:25%;")
 })
-
-# downloadLink('downloadIND', 'Baixe o PDF do Parecer')
 ```
 
 # Redigir Despacho{data-navmenu="Despacho" data-icon="fa-keyboard"}
@@ -380,38 +425,40 @@ tippy::with_tippy(
 ```
 
 ```{r}
-tippy::with_tippy(
-  materialSwitch(
-     inputId = "emailDESP",
-     label = "Enviar Email",
-      value = FALSE
-  ),
-  tooltip = "O email será enviado para comissao.dispensa.estatistica@gmail.com."
-)
+tippy::with_tippy(materialSwitch(
+  inputId = "emailDESP",
+  label = "Enviar Email",
+  value = FALSE
+),
+tooltip = "O email será enviado para comissao.dispensa.estatistica@gmail.com.")
 
 output$downloadREDIGIR <- downloadHandler(
-  filename = "parecer.pdf",
+  filename = "despacho.pdf",
   content = function(file) {
-    rmarkdown::render(
-      "parecer/modelos/modelo_redigir.Rmd",
-      output_file = file,
-      params = list(
-        corpo = input$parecerVazio
-      ),
-      envir = new.env(parent = globalenv())
-    )
+    shiny::withProgress(message = paste0("Aguarde um pouco ..."),
+                        value = 0,
+                        {
+                          shiny::incProgress(1 / 10)
+                          Sys.sleep(1)
+                          shiny::incProgress(5 / 10)
+                          rmarkdown::render(
+                            "parecer/modelos/modelo_redigir.Rmd",
+                            output_file = file,
+                            params = list(corpo = input$parecerVazio),
+                            envir = new.env(parent = globalenv())
+                          )
+                          
+                          file.copy(file, to = "parecer/enviar_email/despacho.pdf", overwrite = TRUE)
+                          
+                          if (isTRUE(input$emailDESP)) {
+                            send_email(tipo = "DESP")
+                          }
+                        })
     
-    file.copy(file, to = "parecer/enviar_email/despacho.pdf", overwrite = TRUE)
-
-    if(isTRUE(input$emailDESP)){
-      send_email(
-        tipo = "DESP"
-      )
-    }
     shinyalert(
       title = "Procedimento finalizado com sucesso",
       text = 'Se a opção de "Enviar Email" estiver ativa, é uma boa prática verificar se o despacho foi recebido no email. De toda forma,                 salve o PDF em um lugar seguro.',
-      size = "s", 
+      size = "s",
       closeOnEsc = TRUE,
       closeOnClickOutside = FALSE,
       html = FALSE,
@@ -419,11 +466,12 @@ output$downloadREDIGIR <- downloadHandler(
       showConfirmButton = TRUE,
       showCancelButton = FALSE,
       confirmButtonText = "OK",
-      confirmButtonCol = "#AEDEF4",
+      confirmButtonCol ="#2b3d4f",
       timer = 0,
       imageUrl = "",
       animation = TRUE
-  )
+    )
+    #unlink(x = "parecer/enviar_email/*")
   }
 )
 
@@ -527,6 +575,7 @@ renderPrint({ementaCOMP()$Assuntos})
 
 #### Enumere os assuntos da prova
 ```{r}
+
 tippy::with_tippy(
   textAreaInput("assuntosCOMP", "Assuntos:", "", width = "500px", height = "200px"),
   tooltip = "Com base na ementa listada acima, enumere nessa caixa de texto os assuntos que o discente deverá estudar para a prova de complementação. (Dica: deixe uma linha em branco entre cada assunto)"
@@ -534,55 +583,63 @@ tippy::with_tippy(
 ```
 
 ```{r}
-tippy::with_tippy(
-  materialSwitch(
-      inputId = "emailCOMP",
-      label = "Enviar Email",
-      value = TRUE
-  ), 
-  tooltip = "O email será eviado para comissao.dispensa.estatistica@gmail.com."
-)
+tippy::with_tippy(materialSwitch(
+  inputId = "emailCOMP",
+  label = "Enviar Email",
+  value = TRUE
+),
+tooltip = "O email será eviado para comissao.dispensa.estatistica@gmail.com.")
 
 output$downloadCOMP <- downloadHandler(
-  filename = "despacho_complementacao.pdf",
+  filename = function(){
+      glue("despacho_complementacao_{input$nomeCOMP}_{input$matriculaCOMP}.pdf")
+    },
   content = function(file) {
-    rmarkdown::render(
-      "parecer/modelos/modelo_complementacao.Rmd",
-      output_file = file,
-      params = list(
-          nome =  input$nomeCOMP,
-          matricula = input$matriculaCOMP,
-          curso_atual =  input$cursoCOMP,
-          disciplina_cursada = input$disciplinaCursadaCOMP,
-          instituicao_antiga = input$instituicaoAnteriorCOMP,
-          anos_cursados = input$anosCursadosCOMP,
-          curso_anterior = input$cursoAntigoCOMP,
-          disciplina = search_all(disciplinas_servico, text = extraindo_codigo(input$disciplinaCOMP))$Disciplina,
-          data =  input$dataCOMP,
-          horario =  input$horarioCOMP,
-          lista_complementacao =  input$assuntosCOMP,
-          local = input$localCOMP
-      ),
-      envir = new.env(parent = globalenv())
-    )
-    
-      
-    file.copy(file, to = "parecer/enviar_email/despacho_complementacao.pdf", overwrite = TRUE)
+    shiny::withProgress(message = paste0("Aguarde um pouco ..."),
+                        value = 0,
+                        {
+                          shiny::incProgress(1 / 10)
+                          Sys.sleep(1)
+                          shiny::incProgress(5 / 10)
+                          rmarkdown::render(
+                            "parecer/modelos/modelo_complementacao.Rmd",
+                            output_file = file,
+                            params = list(
+                              nome =  input$nomeCOMP,
+                              matricula = input$matriculaCOMP,
+                              curso_atual =  input$cursoCOMP,
+                              disciplina_cursada = input$disciplinaCursadaCOMP,
+                              instituicao_antiga = input$instituicaoAnteriorCOMP,
+                              anos_cursados = input$anosCursadosCOMP,
+                              curso_anterior = input$cursoAntigoCOMP,
+                              disciplina = search_all(disciplinas_servico, text = extraindo_codigo(input$disciplinaCOMP))$Disciplina,
+                              data =  input$dataCOMP,
+                              horario =  input$horarioCOMP,
+                              lista_complementacao =  input$assuntosCOMP,
+                              local = input$localCOMP
+                            ),
+                            envir = new.env(parent = globalenv())
+                          )
+                          
+                          file.copy(file, to = glue("parecer/enviar_email/despacho_complementacao_{input$nomeCOMP}_{input$matriculaCOMP}.pdf"))
 
-    if(isTRUE(input$emailCOMP)){
-      send_email(
-        nome = input$nomeCOMP,
-        matricula = input$matriculaCOMP,
-        data = input$dataCOMP,
-        local = input$localCOMP,
-        hora = input$horaCOMP
-      )
-    }
+                          if (isTRUE(input$emailCOMP)) {
+                            send_email(
+                              nome = input$nomeCOMP,
+                              matricula = input$matriculaCOMP,
+                              data = input$dataCOMP,
+                              local = input$localCOMP,
+                              hora = input$horaCOMP
+                            )
+                          }
+                          
+                        })
+    
     
     shinyalert(
       title = "Procedimento finalizado com sucesso",
       text = 'Se a opção de "Enviar Email" estiver ativa, é uma boa prática verificar se o despacho foi recebido no email. De toda forma,                 salve o PDF em um lugar seguro.',
-      size = "s", 
+      size = "s",
       closeOnEsc = TRUE,
       closeOnClickOutside = FALSE,
       html = FALSE,
@@ -590,20 +647,27 @@ output$downloadCOMP <- downloadHandler(
       showConfirmButton = TRUE,
       showCancelButton = FALSE,
       confirmButtonText = "OK",
-      confirmButtonCol = "#AEDEF4",
+      confirmButtonCol ="#2b3d4f",
       timer = 0,
       imageUrl = "",
       animation = TRUE
-  )
+    )
+    #unlink(x = "parecer/enviar_email/*")
   }
 )
 
-#send_email("pedro", "23", "21234", hora = "23", local = "Sala 20 - DE")
-
 renderUI({
-  downloadButton("downloadCOMP", "Baixe o PDF do despacho", style = "width:30%;")
+  show =  downloadButton("downloadCOMP", "Baixe o PDF do despacho", style = "width:30%;")
 })
 ```
+
+# Resoluções {data-icon="fa-book"}
+
+Regulamentos dos Cursos Regulares de Graduação da Universidade Federal da Paraíba - UFPB:
+
+- [**Resolução Nº 29/2020**](https://www.ufpb.br/aci/contents/documentos/resolucoes/REGULAMENTOGERALDAGRADUAO292020.pdf/@@download/file/REGULAMENTOGERALDAGRADUAO292020.pdf)
+
+- [**Resolução Nº 16/2015**](http://www.prg.ufpb.br/prg/codesc/documentos/legislacao/rsep16_2015.pdf/@@download/file/Rsep16_2015.pdf)
 
 # Base {data-icon="fa-database"}
 
@@ -616,4 +680,5 @@ Prezado docente, caso deseje colabora incluindo alguma disciplina ou corrigindo 
 ```{r}
 shiny::renderUI({tabela(ementas)})
 ```
+
 

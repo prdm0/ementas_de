@@ -8,7 +8,7 @@ address:
   - Departamento de Estatística - DE, CCEN, UFPB
 subject: SOLICITAÇÃO DE DISPENSA DE DISCIPLINA
 closing: Com os melhores cumprimentos,
-signature: A comissão.
+signature: A Comissão.
 date: "`r format(Sys.Date(), '%d/%m/%Y')`"
 output: komaletter::komaletter
 params: 
@@ -22,7 +22,7 @@ params:
   disciplina: ""
 ---
   
-No presente processo, o(a) aluno(a) `r params$nome`, matrícula Nº `r params$matricula`, do curso de `r params$curso_atual`, solicita o aproveitamento da(s) disciplina(s) `r params$disciplina_cursada`, cursada(s) na `r params$instituicao_antiga`, no curso de `r params$curso_anterior` em `r params$anos_cursados`, considerando a equivalência com a disciplina `r params$disciplina`, deste departamento. 
+No presente processo, o(a) aluno(a) `r toupper(params$nome)`, matrícula Nº `r toupper(params$matricula)`, do curso de `r toupper(params$curso_atual)`, solicita o aproveitamento da(s) disciplina(s) `r toupper(params$disciplina_cursada)`, cursada(s) na `r toupper(params$instituicao_antiga)`, no curso de `r toupper(params$curso_anterior)`, em `r toupper(params$anos_cursados)`, considerando a equivalência com a disciplina `r toupper(params$disciplina)`, deste departamento. 
 
 Analisando-se o conteúdo programático das disciplinas, verificou-se que  **NÃO SÃO EQUIVALENTES**. Sendo assim, segundo a resolução  Nº 29/2020  do CONSEPE, o requerente **NÃO TEM DIREITO AO APROVEITAMENTO** de estudos.
 
